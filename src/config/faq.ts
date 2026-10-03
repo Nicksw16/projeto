@@ -93,6 +93,6 @@ export const faqs: { id: string; category: FaqCategory; q: string; a: string }[]
     id: "contato",
     category: "Suporte",
     q: "Como falo com vocês?",
-    a: `Pelo WhatsApp, pelo e-mail ${site.email} ou pelo Instagram ${site.instagramHandle}. Atendimento humano de ${hoursLabel()}.`,
+    a: `Pelo WhatsApp${site.email ? `, pelo e-mail ${site.email}` : ""}${site.instagramHandle ? ` ou pelo Instagram ${site.instagramHandle}` : ""}. Atendimento humano de ${hoursLabel()}.`,
   },
 ];

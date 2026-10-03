@@ -37,8 +37,8 @@ Tudo que é dado da empresa fica em **`src/config/site.ts`**:
 | Campo | O que é |
 | --- | --- |
 | `whatsapp` | Número no formato `55` + DDD + número, só dígitos (ex.: `5511987654321`). **Hoje está um número fictício.** |
-| `email` | E-mail de contato |
-| `instagram` / `instagramHandle` | Link e @ do Instagram |
+| `email` | E-mail de contato. **Hoje está vazio (escondido no site)** — preencha com um e-mail da Lynx. |
+| `instagram` / `instagramHandle` | Link e @ do Instagram. **Hoje está vazio (escondido no site)** — o @lynx pertence a outra pessoa. |
 | `hours` | Dias e horário de atendimento humano. Controla o selo "Online agora / Respondemos a partir das 9h". |
 
 Outros pontos:
@@ -50,6 +50,13 @@ Outros pontos:
   e `plan-compare.tsx`) e os exemplos por tipo de negócio (`src/config/niches.ts`).
 - **Mensagens do WhatsApp** — todo link `wa.me` recebe automaticamente, no fim do texto, a página de onde o visitante
   veio e o tipo de negócio que ele escolheu nas demos (`src/lib/lead.ts`).
+
+## Segurança
+
+O `vercel.json` envia cabeçalhos de proteção em todas as páginas: Content-Security-Policy (só carrega scripts,
+fontes e imagens do próprio site), bloqueio de exibição dentro de outros sites (clickjacking), `nosniff`,
+Referrer-Policy e Permissions-Policy. Se um dia adicionar um script de fora (Google Analytics, Meta Pixel,
+chat etc.), inclua o domínio dele na `Content-Security-Policy`, senão o navegador bloqueia.
 
 ## Estrutura
 

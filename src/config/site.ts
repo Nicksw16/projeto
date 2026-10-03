@@ -6,9 +6,11 @@ export const site = {
     "A Lynx cria sites de alta conversão e automações de WhatsApp com IA que atendem, qualificam e vendem pelo seu negócio 24 horas por dia.",
   // Número no formato internacional, só dígitos: 55 + DDD + número.
   whatsapp: "5500000000000",
-  email: "contato@lynx.com.br",
-  instagram: "https://instagram.com/lynx",
-  instagramHandle: "@lynx",
+  // Deixe vazio ("") para esconder do site. Não use contatos que não sejam da Lynx:
+  // @lynx no Instagram e o domínio lynx.com.br pertencem a outras pessoas.
+  email: "",
+  instagram: "",
+  instagramHandle: "",
   city: "Brasil",
   // Horário em que alguém da Lynx responde. Usado no selo "Online agora / Respondemos às 9h".
   hours: { days: [1, 2, 3, 4, 5], open: 9, close: 18, timeZone: "America/Sao_Paulo" },

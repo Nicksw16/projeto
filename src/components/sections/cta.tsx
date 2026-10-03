@@ -32,10 +32,12 @@ export function Cta() {
                   Chamar no WhatsApp
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </ButtonLink>
-                <ButtonLink href={`mailto:${site.email}`} variant="secondary" size="lg">
-                  <Mail className="size-4" />
-                  {site.email}
-                </ButtonLink>
+                {site.email && (
+                  <ButtonLink href={`mailto:${site.email}`} variant="secondary" size="lg">
+                    <Mail className="size-4" />
+                    {site.email}
+                  </ButtonLink>
+                )}
               </div>
               <StatusBadge className="mt-8" />
             </div>

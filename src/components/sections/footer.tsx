@@ -23,15 +23,17 @@ export function Footer() {
               >
                 <WhatsAppIcon className="size-4" />
               </a>
-              <a
-                href={site.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram da Lynx"
-                className="flex size-10 items-center justify-center rounded-full border border-white/10 text-neutral-300 transition-colors hover:border-lynx-400/40 hover:text-lynx-300"
-              >
-                <InstagramIcon className="size-4" />
-              </a>
+              {site.instagram && (
+                <a
+                  href={site.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram da Lynx"
+                  className="flex size-10 items-center justify-center rounded-full border border-white/10 text-neutral-300 transition-colors hover:border-lynx-400/40 hover:text-lynx-300"
+                >
+                  <InstagramIcon className="size-4" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -75,16 +77,20 @@ export function Footer() {
                   WhatsApp
                 </a>
               </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="transition-colors hover:text-white">
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
-                  {site.instagramHandle}
-                </a>
-              </li>
+              {site.email && (
+                <li>
+                  <a href={`mailto:${site.email}`} className="transition-colors hover:text-white">
+                    {site.email}
+                  </a>
+                </li>
+              )}
+              {site.instagram && (
+                <li>
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+                    {site.instagramHandle}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
