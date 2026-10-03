@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router";
 
 import { InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import { Logo } from "@/components/logo";
@@ -39,9 +40,9 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-neutral-400">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="transition-colors hover:text-white">
+                  <Link to={item.href} className="transition-colors hover:text-white">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -50,11 +51,19 @@ export function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-sm font-medium text-white">Serviços</h3>
             <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-              <li>Automação de WhatsApp</li>
-              <li>Chatbots com IA</li>
-              <li>Criação de sites</li>
-              <li>Landing pages</li>
-              <li>Lojas virtuais</li>
+              {[
+                ["Automação de WhatsApp", "/automacao"],
+                ["Chatbots com IA", "/automacao"],
+                ["Criação de sites", "/servicos"],
+                ["Landing pages", "/servicos"],
+                ["Lojas virtuais", "/servicos"],
+              ].map(([label, to]) => (
+                <li key={label}>
+                  <Link to={to} className="transition-colors hover:text-white">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -92,9 +101,13 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </p>
-          <a href="#inicio" className="flex items-center gap-1.5 transition-colors hover:text-white">
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-1.5 transition-colors hover:text-white"
+          >
             Voltar ao topo <ArrowUp className="size-3.5" />
-          </a>
+          </button>
         </div>
       </div>
     </footer>

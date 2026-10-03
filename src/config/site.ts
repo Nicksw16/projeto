@@ -17,9 +17,9 @@ export function whatsappLink(message = "Olá, Lynx! Quero saber mais sobre os se
 }
 
 export const nav = [
-  { label: "Serviços", href: "#servicos" },
-  { label: "Automação", href: "#automacao" },
-  { label: "Processo", href: "#processo" },
-  { label: "Planos", href: "#planos" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Automação", href: "/automacao" },
+  { label: "Processo", href: "/processo" },
+  { label: "Planos", href: "/planos" },
+  { label: "FAQ", href: "/faq" },
 ];

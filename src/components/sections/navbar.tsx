@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { Link, NavLink, useLocation } from "react-router";
 
 import { ButtonLink } from "@/components/button";
 import { WhatsAppIcon } from "@/components/icons";
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -18,6 +20,9 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Fecha o menu do celular ao trocar de página.
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -37,19 +42,35 @@ export function Navbar() {
         )}
         aria-label="Principal"
       >
-        <a href="#inicio" className="rounded-full px-2 py-1" aria-label="Lynx — início" onClick={() => setOpen(false)}>
+        <Link to="/" className="rounded-full px-2 py-1" aria-label="Lynx — página inicial">
           <Logo />
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {nav.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
-                className="rounded-full px-4 py-2 text-sm text-neutral-400 transition-colors hover:bg-white/[0.05] hover:text-white"
+              <NavLink
+                to={item.href}
+                className={({ isActive }) =>
+                  cn(
+                    "relative block rounded-full px-4 py-2 text-sm transition-colors",
+                    isActive ? "text-white" : "text-neutral-400 hover:text-white",
+                  )
+                }
               >
-                {item.label}
-              </a>
+                {({ isActive }) => (
+                  <>
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-active"
+                        className="absolute inset-0 rounded-full border border-white/10 bg-white/[0.07]"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                    <span className="relative">{item.label}</span>
+                  </>
+                )}
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -81,15 +102,25 @@ export function Navbar() {
             className="mx-auto mt-2 max-w-6xl rounded-3xl border border-white/10 bg-ink-900/95 p-3 backdrop-blur-xl md:hidden"
           >
             <ul className="flex flex-col">
-              {nav.map((item) => (
+              {[{ label: "Início", href: "/" }, ...nav].map((item) => (
                 <li key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-2xl px-4 py-3.5 text-lg text-neutral-200 transition-colors hover:bg-white/[0.05]"
+                  <NavLink
+                    to={item.href}
+                    end
+                    className={({ isActive }) =>
+                      cn(
+                        "flex items-center justify-between rounded-2xl px-4 py-3.5 text-lg transition-colors hover:bg-white/[0.05]",
+                        isActive ? "bg-white/[0.06] text-white" : "text-neutral-300",
+                      )
+                    }
                   >
-                    {item.label}
-                  </a>
+                    {({ isActive }) => (
+                      <>
+                        {item.label}
+                        {isActive && <span className="size-2 rounded-full bg-lynx-400 shadow-[0_0_10px_rgb(189_238_54)]" />}
+                      </>
+                    )}
+                  </NavLink>
                 </li>
               ))}
             </ul>

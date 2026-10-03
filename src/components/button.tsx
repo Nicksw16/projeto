@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { cn } from "@/lib/utils";
 
 type ButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -5,11 +7,18 @@ type ButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   size?: "md" | "lg";
 };
 
-export function ButtonLink({ variant = "primary", size = "md", className, children, ...props }: ButtonProps) {
-  const external = props.href?.startsWith("http");
+export function ButtonLink({ variant = "primary", size = "md", className, children, href = "", ...props }: ButtonProps) {
+  // Rotas internas ("/planos") navegam sem recarregar; links externos abrem em nova aba.
+  const external = /^(https?:|mailto:|tel:)/.test(href);
+  const Tag = (external ? "a" : Link) as React.ElementType;
+  const linkProps = !external
+    ? { to: href }
+    : href.startsWith("http")
+      ? { href, target: "_blank", rel: "noopener noreferrer" }
+      : { href };
   return (
-    <a
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    <Tag
+      {...linkProps}
       {...props}
       className={cn(
         "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-300 active:scale-[0.98]",
@@ -27,6 +36,6 @@ export function ButtonLink({ variant = "primary", size = "md", className, childr
         <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
       )}
       <span className="relative inline-flex items-center gap-2">{children}</span>
-    </a>
+    </Tag>
   );
 }

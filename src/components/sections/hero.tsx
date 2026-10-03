@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 import { ArrowRight, Check, Database, Zap, CalendarCheck } from "lucide-react";
 
 import { ButtonLink } from "@/components/button";
@@ -68,15 +69,16 @@ export function Hero() {
 
       <div className="container-lynx relative grid items-center gap-16 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-7">
-          <motion.a
-            href="#automacao"
-            {...fadeUp(0.1)}
-            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1 pl-1 pr-3 text-xs text-neutral-300 backdrop-blur transition-colors hover:border-lynx-400/30"
-          >
-            <span className="rounded-full bg-lynx-400 px-2 py-0.5 text-[11px] font-semibold text-ink-950">IA</span>
-            Automação de WhatsApp + sites de alta conversão
-            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-          </motion.a>
+          <motion.div {...fadeUp(0.1)}>
+            <Link
+              to="/automacao"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1 pl-1 pr-3 text-xs text-neutral-300 backdrop-blur transition-colors hover:border-lynx-400/30"
+            >
+              <span className="rounded-full bg-lynx-400 px-2 py-0.5 text-[11px] font-semibold text-ink-950">IA</span>
+              Automação de WhatsApp + sites de alta conversão
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </motion.div>
 
           <motion.h1
             {...fadeUp(0.2)}
@@ -106,7 +108,7 @@ export function Hero() {
               <WhatsAppIcon className="size-[18px]" />
               Quero meu projeto
             </ButtonLink>
-            <ButtonLink href="#servicos" variant="secondary" size="lg">
+            <ButtonLink href="/servicos" variant="secondary" size="lg">
               Conhecer os serviços
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </ButtonLink>
