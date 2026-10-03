@@ -1,24 +1,19 @@
 import { motion } from "motion/react";
 import {
-  ArrowUpRight,
   Bot,
   CalendarCheck,
-  Check,
   Database,
   Headphones,
   MessageCircle,
   Palette,
   Search,
   Send,
-  Smartphone,
   UserRound,
   Workflow,
 } from "lucide-react";
 
-import { ButtonLink } from "@/components/button";
 import { Reveal, SectionHeading } from "@/components/reveal";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { whatsappLink } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 function GlowCard({ className, children }: { className?: string; children: React.ReactNode }) {
@@ -29,19 +24,6 @@ function GlowCard({ className, children }: { className?: string; children: React
         {children}
       </div>
     </div>
-  );
-}
-
-function FeatureList({ items }: { items: string[] }) {
-  return (
-    <ul className="grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2.5 text-sm text-neutral-300">
-          <Check className="mt-0.5 size-4 shrink-0 text-lynx-400" strokeWidth={2.5} />
-          {item}
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -56,7 +38,7 @@ const branches = [
   { icon: UserRound, label: "Humano" },
 ];
 
-function AutomationVisual() {
+export function AutomationVisual() {
   return (
     <div className="relative flex flex-col items-center px-6 pb-8 pt-2">
       {flow.map(({ icon: Icon, label, tone }, i) => (
@@ -109,7 +91,7 @@ function AutomationVisual() {
   );
 }
 
-function WebsiteVisual() {
+export function WebsiteVisual() {
   return (
     <div className="relative px-6 pb-8 pt-2">
       <div className="relative overflow-hidden rounded-xl border border-white/10 bg-ink-950 shadow-2xl">
@@ -198,94 +180,22 @@ const extras = [
   },
 ];
 
-export function Services() {
+export function Differentials() {
   return (
-    <section id="servicos" className="relative py-24 sm:py-32">
+    <section className="relative py-24 sm:py-32">
       <div className="container-lynx">
         <SectionHeading
-          eyebrow="O que fazemos"
+          eyebrow="Por que a Lynx"
           title={
             <>
-              Duas especialidades.{" "}
-              <span className="font-serif font-normal italic text-lynx-300">Um só objetivo:</span> fazer você vender mais.
+              Detalhes que fazem <span className="font-serif font-normal italic text-lynx-300">toda a diferença.</span>
             </>
           }
-          description="Unimos o melhor de dois mundos: um site que conquista no primeiro clique e um WhatsApp que atende, qualifica e fecha — tudo trabalhando junto."
+          description="O que vem junto em todo projeto — sem taxa escondida de “configuração” e sem você precisar correr atrás."
         />
-
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
-          <Reveal className="sm:col-span-2 lg:col-span-7">
-            <GlowCard>
-              <div className="p-7 sm:p-9">
-                <div className="flex items-center gap-3">
-                  <span className="flex size-11 items-center justify-center rounded-2xl bg-lynx-400 text-ink-950">
-                    <MessageCircle className="size-5" />
-                  </span>
-                  <span className="text-sm font-medium text-lynx-300">Automação de WhatsApp</span>
-                </div>
-                <h3 className="mt-6 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                  Um atendente incansável, 24 horas por dia.
-                </h3>
-                <p className="mt-3 max-w-lg text-neutral-400">
-                  Chatbots com inteligência artificial que respondem na hora, tiram dúvidas, qualificam leads, agendam
-                  horários e passam para sua equipe só quando realmente precisa.
-                </p>
-                <div className="mt-7">
-                  <FeatureList
-                    items={[
-                      "Atendimento com IA 24/7",
-                      "Qualificação automática de leads",
-                      "Agendamentos e lembretes",
-                      "Catálogo, orçamento e pagamento",
-                      "Transferência para humano",
-                      "Disparos e campanhas segmentadas",
-                    ]}
-                  />
-                </div>
-              </div>
-              <div className="mt-auto">
-                <AutomationVisual />
-              </div>
-            </GlowCard>
-          </Reveal>
-
-          <Reveal className="sm:col-span-2 lg:col-span-5" delay={0.1}>
-            <GlowCard>
-              <div className="p-7 sm:p-9">
-                <div className="flex items-center gap-3">
-                  <span className="flex size-11 items-center justify-center rounded-2xl bg-white text-ink-950">
-                    <Smartphone className="size-5" />
-                  </span>
-                  <span className="text-sm font-medium text-neutral-300">Criação de Sites</span>
-                </div>
-                <h3 className="mt-6 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                  Sites que impressionam e convertem.
-                </h3>
-                <p className="mt-3 text-neutral-400">
-                  Landing pages, sites institucionais e lojas virtuais com design exclusivo, velocidade de verdade e
-                  foco total em transformar visita em contato.
-                </p>
-                <div className="mt-7">
-                  <FeatureList
-                    items={[
-                      "Design 100% exclusivo",
-                      "Rápido e responsivo",
-                      "SEO para o Google",
-                      "Botão e integração WhatsApp",
-                      "Landing pages e lojas",
-                      "Domínio, hospedagem e SSL",
-                    ]}
-                  />
-                </div>
-              </div>
-              <div className="mt-auto">
-                <WebsiteVisual />
-              </div>
-            </GlowCard>
-          </Reveal>
-
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {extras.map(({ icon: Icon, title, text }, i) => (
-            <Reveal key={title} className="lg:col-span-4" delay={0.05 * i}>
+            <Reveal key={title} delay={0.05 * i}>
               <GlowCard>
                 <div className="flex h-full flex-col p-6 sm:p-7">
                   <span className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-lynx-300">
@@ -298,13 +208,6 @@ export function Services() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="mt-12 flex justify-center">
-          <ButtonLink href={whatsappLink("Olá, Lynx! Quero entender qual serviço é ideal para o meu negócio.")} variant="secondary">
-            Não sabe por onde começar? Fale com a gente
-            <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </ButtonLink>
-        </Reveal>
       </div>
     </section>
   );

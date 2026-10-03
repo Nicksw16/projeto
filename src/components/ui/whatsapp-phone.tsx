@@ -1,49 +1,54 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowLeft, CalendarCheck, Camera, Mic, MoreVertical, Paperclip, Phone, Smile, Store, Video } from "lucide-react";
+import { ArrowLeft, CalendarCheck, Camera, Mic, MoreVertical, Paperclip, Phone, ShoppingBag, Smile, Store, Video } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 // Base: Great UI Mobile Mockup (saurabh-2607 via 21st.dev) — roteiro de atendimento automático da Lynx
 
-type Message = {
+export type Message = {
   id: number;
   from: "client" | "bot";
   text?: string;
   time: string;
   options?: string[];
+  /** Opção que o cliente escolheu (marca o botão na mensagem anterior do robô). */
+  pick?: string;
   picked?: string;
-  card?: { title: string; detail: string };
+  card?: { title: string; detail: string; kind?: "agenda" | "pedido" };
 };
 
-type Step = { message: Message; wait: number };
+export type ChatScript = { business: string; steps: { message: Message; wait: number }[] };
 
-const SCRIPT: Step[] = [
-  { wait: 700, message: { id: 1, from: "client", text: "Oi! Vocês têm horário amanhã? 😊", time: "10:41" } },
-  {
-    wait: 1500,
-    message: {
-      id: 2,
-      from: "bot",
-      text: "Olá! Sou a Lia, assistente virtual da Sua Empresa 👋 Tenho estes horários livres para amanhã:",
-      options: ["09:30", "14:00", "16:30"],
-      time: "10:41",
+export const DEFAULT_SCRIPT: ChatScript = {
+  business: "Sua Empresa",
+  steps: [
+    { wait: 700, message: { id: 1, from: "client", text: "Oi! Vocês têm horário amanhã? 😊", time: "23:47" } },
+    {
+      wait: 1500,
+      message: {
+        id: 2,
+        from: "bot",
+        text: "Olá! Sou a Lia, assistente virtual da Sua Empresa 👋 Tenho estes horários livres para amanhã:",
+        options: ["09:30", "14:00", "16:30"],
+        time: "23:47",
+      },
     },
-  },
-  { wait: 1900, message: { id: 3, from: "client", text: "14:00, por favor!", time: "10:42" } },
-  {
-    wait: 1500,
-    message: {
-      id: 4,
-      from: "bot",
-      text: "Prontinho! ✅ Seu horário está confirmado.",
-      card: { title: "Agendamento confirmado", detail: "Amanhã, 14:00 · lembrete 1h antes" },
-      time: "10:42",
+    { wait: 1900, message: { id: 3, from: "client", text: "14:00, por favor!", pick: "14:00", time: "23:48" } },
+    {
+      wait: 1500,
+      message: {
+        id: 4,
+        from: "bot",
+        text: "Prontinho! ✅ Seu horário está confirmado.",
+        card: { title: "Agendamento confirmado", detail: "Amanhã, 14:00 · lembrete 1h antes" },
+        time: "23:48",
+      },
     },
-  },
-  { wait: 1800, message: { id: 5, from: "client", text: "Perfeito, obrigado!", time: "10:42" } },
-  { wait: 1400, message: { id: 6, from: "bot", text: "Eu que agradeço! Qualquer coisa é só chamar 💚", time: "10:42" } },
-];
+    { wait: 1800, message: { id: 5, from: "client", text: "Perfeito, obrigado!", time: "23:48" } },
+    { wait: 1400, message: { id: 6, from: "bot", text: "Eu que agradeço! Qualquer coisa é só chamar 💚", time: "23:48" } },
+  ],
+};
 
 const TYPING_TIME = 1100;
 const RESTART_AFTER = 4200;
@@ -56,7 +61,8 @@ function DoubleCheck({ className }: { className?: string }) {
   );
 }
 
-export function WhatsAppPhone({ className }: { className?: string }) {
+export function WhatsAppPhone({ className, script = DEFAULT_SCRIPT }: { className?: string; script?: ChatScript }) {
+  const SCRIPT = script.steps;
   const reduced = useReducedMotion();
   const [visible, setVisible] = useState<Message[]>(reduced ? SCRIPT.map((s) => s.message) : []);
   const [typing, setTyping] = useState(false);
@@ -80,12 +86,8 @@ export function WhatsAppPhone({ className }: { className?: string }) {
         setTimeout(() => {
           setTyping(false);
           setVisible((prev) => {
-            // Quando o cliente escolhe um horário, marca a opção na mensagem do bot.
-            const next = prev.map((m) =>
-              m.options && message.from === "client" && m.options.includes(message.text?.slice(0, 5) ?? "")
-                ? { ...m, picked: message.text?.slice(0, 5) }
-                : m,
-            );
+            // Quando o cliente escolhe uma opção, marca o botão na mensagem do robô.
+            const next = prev.map((m) => (m.options && message.pick && m.options.includes(message.pick) ? { ...m, picked: message.pick } : m));
             return [...next, message];
           });
         }, elapsed),
@@ -94,7 +96,7 @@ export function WhatsAppPhone({ className }: { className?: string }) {
 
     timers.push(setTimeout(() => setCycle((c) => c + 1), elapsed + RESTART_AFTER));
     return () => timers.forEach(clearTimeout);
-  }, [cycle, reduced]);
+  }, [cycle, reduced, SCRIPT]);
 
   return (
     <div className={cn("relative mx-auto w-full max-w-[300px] select-none", className)}>
@@ -106,7 +108,7 @@ export function WhatsAppPhone({ className }: { className?: string }) {
         <div className="relative isolate flex h-full w-full flex-col overflow-hidden rounded-[36px] bg-[#0b141a] text-neutral-100">
           {/* Status bar */}
           <div className="relative z-30 flex shrink-0 items-center justify-between bg-[#111b21] px-6 pb-1 pt-3 text-[11px] font-semibold">
-            <span>10:42</span>
+            <span>{SCRIPT[0]?.message.time ?? "10:42"}</span>
             <span className="absolute left-1/2 top-2 h-5 w-20 -translate-x-1/2 rounded-full bg-black" />
             <span className="flex items-center gap-1">
               <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -130,7 +132,7 @@ export function WhatsAppPhone({ className }: { className?: string }) {
                 <Store className="size-4" />
               </div>
               <div className="leading-tight">
-                <p className="text-[12.5px] font-semibold">Sua Empresa</p>
+                <p className="text-[12.5px] font-semibold">{script.business}</p>
                 <p className={cn("text-[10px]", typing ? "text-emerald-400" : "text-neutral-400")}>
                   {typing ? "digitando…" : "online"}
                 </p>
@@ -170,7 +172,7 @@ export function WhatsAppPhone({ className }: { className?: string }) {
                       {msg.card && (
                         <div className="mt-1.5 flex items-center gap-2 rounded-lg border border-lynx-400/20 bg-lynx-400/10 p-2">
                           <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-lynx-400 text-ink-950">
-                            <CalendarCheck className="size-4" />
+                            {msg.card.kind === "pedido" ? <ShoppingBag className="size-4" /> : <CalendarCheck className="size-4" />}
                           </span>
                           <span className="leading-tight">
                             <span className="block text-[11.5px] font-semibold text-lynx-200">{msg.card.title}</span>

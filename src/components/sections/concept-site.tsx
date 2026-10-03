@@ -1,10 +1,9 @@
 import { ArrowRight, CalendarClock, Leaf, Sparkles, Star } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/icons";
-import { ContainerScroll } from "@/components/ui/container-scroll";
 
 // Projeto conceito exibido dentro do "tablet" — uma marca fictícia para mostrar versatilidade de design.
-function ConceptSite() {
+export function ConceptSite() {
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#fbf6f1] font-sans text-[#2b211e]">
       <div className="absolute -right-24 -top-24 size-[420px] rounded-full bg-[#f3d5c4] opacity-70 blur-3xl" />
@@ -99,32 +98,5 @@ function ConceptSite() {
         <WhatsAppIcon className="size-6" />
       </span>
     </div>
-  );
-}
-
-export function Showcase() {
-  return (
-    <section aria-label="Exemplo de site" className="relative -mt-10 overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-1/3 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_center,rgb(52_211_153/0.08),transparent_60%)]" />
-      <ContainerScroll
-        titleComponent={
-          <div className="px-4 pb-16 md:pb-20">
-            <span className="eyebrow">
-              <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(189_238_54)]" />
-              Criação de sites
-            </span>
-            <h2 className="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4rem]">
-              Design que faz a sua marca <span className="font-serif font-normal italic text-lynx-300">parecer gigante.</span>
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
-              Cada site nasce do zero, com a identidade do seu negócio — não da nossa. Abaixo, um projeto conceito
-              integrado ao WhatsApp.
-            </p>
-          </div>
-        }
-      >
-        <ConceptSite />
-      </ContainerScroll>
-    </section>
   );
 }

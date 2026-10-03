@@ -10,6 +10,8 @@ export const site = {
   instagram: "https://instagram.com/lynx",
   instagramHandle: "@lynx",
   city: "Brasil",
+  // Horário em que alguém da Lynx responde. Usado no selo "Online agora / Respondemos às 9h".
+  hours: { days: [1, 2, 3, 4, 5], open: 9, close: 18, timeZone: "America/Sao_Paulo" },
 };
 
 export function whatsappLink(message = "Olá, Lynx! Quero saber mais sobre os serviços.") {

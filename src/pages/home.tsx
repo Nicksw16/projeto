@@ -1,24 +1,29 @@
-import { Automation } from "@/components/sections/automation";
 import { Comparison } from "@/components/sections/comparison";
 import { Cta } from "@/components/sections/cta";
-import { Hero } from "@/components/sections/hero";
+import { HomeHero } from "@/components/sections/home-hero";
 import { Logos } from "@/components/sections/logos";
-import { Services } from "@/components/sections/services";
-import { Showcase } from "@/components/sections/showcase";
+import { NicheDemo } from "@/components/sections/niche-demo";
+import { SolutionStack } from "@/components/sections/solution-stack";
 import { Stats } from "@/components/sections/stats";
+import { ScrollWordReveal } from "@/components/ui/scroll-word-reveal";
 import { usePageMeta } from "@/lib/use-page-meta";
 
+// Capítulo 1 — "A mensagem das 23h47": problema → virada → prova → solução → ação.
 export default function HomePage() {
   usePageMeta(null);
   return (
     <>
-      <Hero />
+      <HomeHero />
       <Logos />
-      <Services />
-      <Automation />
+      <ScrollWordReveal
+        kicker="Enquanto isso, no seu WhatsApp…"
+        text="Enquanto você dorme, almoça ou atende outro cliente, mensagens chegam. Cada uma sem resposta é um cliente indo embora para o concorrente."
+        accents={["sem", "resposta"]}
+      />
       <Comparison />
+      <NicheDemo />
+      <SolutionStack />
       <Stats />
-      <Showcase />
       <Cta />
     </>
   );
