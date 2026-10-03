@@ -36,7 +36,7 @@ export function StackingCardItem({
   const scale = useTransform(progress, [index * (1 / totalCards), 1], [1, 1 - (totalCards - index) * scaleMultiplier]);
   return (
     <div className={cn("sticky top-0", className)} {...props}>
-      <motion.div className="relative origin-top" style={{ top: `${8 + index * 3}vh`, scale }}>
+      <motion.div className="relative origin-top" style={{ top: `calc(${12 + index * 3}vh)`, scale }}>
         {children}
       </motion.div>
     </div>

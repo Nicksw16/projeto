@@ -5,10 +5,10 @@ import { Reveal, SectionHeading } from "@/components/reveal";
 
 const rows = [
   { without: "Cliente espera horas por uma resposta", with: "Resposta em segundos, 24 horas por dia" },
-  { without: "Leads se perdem à noite e no fim de semana", with: "Todo contato registrado e acompanhado" },
+  { without: "Mensagens ficam sem resposta à noite e no fim de semana", with: "Todo contato registrado e acompanhado" },
   { without: "Equipe responde as mesmas perguntas o dia todo", with: "Equipe livre para focar em fechar vendas" },
   { without: "Site lento, genérico ou desatualizado", with: "Site rápido, exclusivo e que passa confiança" },
-  { without: "Orçamentos esquecidos, sem follow-up", with: "Follow-up automático que recupera vendas" },
+  { without: "Orçamento enviado e esquecido, sem retorno", with: "Lembrete automático que retoma a conversa" },
 ];
 
 export function Comparison() {

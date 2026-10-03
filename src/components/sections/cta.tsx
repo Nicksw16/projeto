@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/button";
 import { WhatsAppIcon } from "@/components/icons";
 import { LynxMark } from "@/components/logo";
 import { Reveal } from "@/components/reveal";
+import { StatusBadge } from "@/components/ui/status-badge";
 import { site, whatsappLink } from "@/config/site";
 
 export function Cta() {
@@ -23,7 +24,7 @@ export function Cta() {
                 Pronto para colocar seu negócio no <span className="font-serif font-normal italic text-lynx-300">modo Lynx?</span>
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-lg text-neutral-400">
-                Conte o que você precisa e receba uma proposta sob medida. Sem compromisso, sem enrolação.
+                Conte o que você precisa e receba uma proposta por escrito, feita para o seu negócio. Sem compromisso, sem enrolação.
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <ButtonLink href={whatsappLink("Olá, Lynx! Quero colocar meu negócio no modo Lynx 🚀")} size="lg">
@@ -36,6 +37,7 @@ export function Cta() {
                   {site.email}
                 </ButtonLink>
               </div>
+              <StatusBadge className="mt-8" />
             </div>
           </div>
         </Reveal>

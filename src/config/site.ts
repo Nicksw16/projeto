@@ -25,3 +25,19 @@ export const nav = [
   { label: "Planos", href: "/planos" },
   { label: "FAQ", href: "/faq" },
 ];
+
+const DAY_NAMES = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
+
+// "seg a sex, 9h–18h" a partir de site.hours (usado no selo de horário e no FAQ).
+export function hoursLabel() {
+  const { days, open, close } = site.hours;
+  const sorted = [...days].sort((a, b) => a - b);
+  const consecutive = sorted.every((d, i) => i === 0 || d === sorted[i - 1] + 1);
+  const range =
+    sorted.length === 7
+      ? "todos os dias"
+      : consecutive && sorted.length > 2
+        ? `${DAY_NAMES[sorted[0]]} a ${DAY_NAMES[sorted[sorted.length - 1]]}`
+        : sorted.map((d) => DAY_NAMES[d]).join(", ");
+  return `${range}, ${open}h–${close}h`;
+}

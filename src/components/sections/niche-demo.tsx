@@ -34,7 +34,7 @@ export function NicheDemo({
   };
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative overflow-x-clip py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-[600px] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgb(189_238_54/0.07),transparent_65%)]" />
       <div className="container-lynx grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
@@ -104,7 +104,7 @@ export function NicheDemo({
         </div>
 
         <Reveal delay={0.15} className="relative">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-lynx-400/20 to-emerald-500/15 blur-[90px]" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(420px,100vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-lynx-400/20 to-emerald-500/15 blur-[90px]" />
           <WhatsAppPhone key={niche.id} script={niche.script} />
           <p className="mt-4 text-center text-xs text-neutral-500">Conversa simulada · exemplo de {niche.label.toLowerCase()}</p>
         </Reveal>

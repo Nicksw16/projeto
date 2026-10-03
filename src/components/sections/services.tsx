@@ -160,8 +160,8 @@ const extras = [
   },
   {
     icon: Workflow,
-    title: "Follow-up automático",
-    text: "Lembretes, recuperação de orçamentos e reengajamento sem esforço manual.",
+    title: "Lembretes automáticos",
+    text: "Avisa antes do horário marcado e retoma o orçamento que ficou sem resposta.",
   },
   {
     icon: Palette,

@@ -8,8 +8,8 @@ type ButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 export function ButtonLink({ variant = "primary", size = "md", className, children, href = "", ...props }: ButtonProps) {
-  // Rotas internas ("/planos") navegam sem recarregar; links externos abrem em nova aba.
-  const external = /^(https?:|mailto:|tel:)/.test(href);
+  // Rotas internas ("/planos") navegam sem recarregar; links externos abrem em nova aba; "#secao" rola na própria página.
+  const external = /^(https?:|mailto:|tel:|#)/.test(href);
   const Tag = (external ? "a" : Link) as React.ElementType;
   const linkProps = !external
     ? { to: href }

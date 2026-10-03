@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function FlipText({ children, className }: { children: string; className?: string }) {
   const letters = Array.from(children);
   return (
-    <span className={cn("relative block overflow-hidden whitespace-nowrap", className)} style={{ lineHeight: 1 }}>
+    <span className={cn("relative block overflow-hidden whitespace-nowrap", className)} style={{ lineHeight: 1.2 }}>
       <span className="flex" aria-hidden="true">
         {letters.map((letter, i) => (
           <span

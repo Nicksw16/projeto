@@ -395,7 +395,8 @@ function ServiceCard({ service: s }: { service: Service }) {
 }
 
 const panelClass =
-  "sticky top-0 mx-auto grid min-h-screen w-full max-w-7xl origin-top content-center items-center px-5 py-24 sm:px-8 lg:grid-cols-2 lg:gap-10";
+  // No celular o painel tem fundo próprio para cobrir o anterior ao subir (no desktop o título fica no fundo fixo).
+  "sticky top-0 mx-auto grid min-h-screen w-full max-w-7xl origin-top content-center items-center px-5 py-24 max-lg:bg-ink-950 sm:px-8 lg:grid-cols-2 lg:gap-10";
 
 export function ServicesStack({ services, eyebrow }: { services: Service[]; eyebrow: string }) {
   const root = useRef<HTMLElement>(null);
