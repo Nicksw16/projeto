@@ -558,11 +558,17 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   };
   canvas.addEventListener("webglcontextlost", onLost);
 
+  // Se algum shader não compilar nesta placa de vídeo, volta para o celular em HTML (que também anima).
+  renderer.debug.onShaderError = () => {
+    if (!disposed) o.onFail();
+  };
+
   // Compila shaders (e gera o PMREM do ambiente) antes de mostrar, para não engasgar na primeira rolagem.
+  // Com limite de tempo: em alguns navegadores a compilação paralela nunca avisa que terminou.
   o.host.appendChild(canvas);
   if (renderer.extensions.has("KHR_parallel_shader_compile")) {
     try {
-      await renderer.compileAsync(scene, camera);
+      await Promise.race([renderer.compileAsync(scene, camera), sleep(2500)]);
     } catch {
       /* compila no primeiro render */
     }
