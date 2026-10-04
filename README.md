@@ -2,7 +2,8 @@
 
 Site da **Lynx**: automação de WhatsApp com IA e criação de sites.
 
-Feito com React 19, TypeScript, Vite, Tailwind CSS v4, Motion e React Router. Vários componentes vêm do
+Feito com React 19, TypeScript, Vite, Tailwind CSS v4, Motion e React Router. O celular 3D da home usa three.js +
+anime.js e só é baixado quando o visitante chega perto dele (`src/components/three/`). Vários componentes vêm do
 [21st.dev](https://21st.dev) e foram adaptados para a identidade da Lynx (Notification Stack, Scroll Word Reveal,
 Stacking Cards, Services Stack, Safari + Scroll Reveal, Us vs Them, Trigger to Action, Integrations Orbit,
 ROI Calculator, How It Works, Onboarding Checklist, Product Finder Quiz, Feature Comparison Table,
@@ -23,7 +24,7 @@ Cada item do menu é uma página própria. Todas contam a mesma história: o cli
 
 | Rota | Arquivo | O que tem |
 | --- | --- | --- |
-| `/` | `src/pages/home.tsx` | Gancho das 23h47, comparação, demo por tipo de negócio, os 3 pilares |
+| `/` | `src/pages/home.tsx` | Gancho das 23h47, celular 3D que responde com a rolagem, comparação, demo por tipo de negócio, os 3 pilares |
 | `/servicos` | `src/pages/servicos.tsx` | Site conceito que abre ao rolar, Lynx × jeito comum, serviços, diferenciais |
 | `/automacao` | `src/pages/automacao.tsx` | Passo a passo fixo na tela, regras "Quando → Então", integrações, calculadora |
 | `/processo` | `src/pages/processo.tsx` | 5 passos (o que a Lynx faz / o que você faz), checklist "sua parte é pequena" |

@@ -10,4 +10,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // O chunk da cena 3D (three.js) tem ~650 kB, mas só é baixado quando a seção se aproxima.
+    chunkSizeWarningLimit: 700,
+  },
 });
