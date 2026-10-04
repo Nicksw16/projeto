@@ -16,7 +16,7 @@ export default function HomePage() {
       <HomeHero />
       <Logos />
       <ScrollWordReveal
-        kicker="Enquanto isso, no seu WhatsApp…"
+        kicker="Agora mesmo, no seu WhatsApp…"
         text="Enquanto você dorme, almoça ou atende outro cliente, mensagens chegam. Cada uma sem resposta é um cliente indo embora para o concorrente."
         accents={["sem", "resposta"]}
       />

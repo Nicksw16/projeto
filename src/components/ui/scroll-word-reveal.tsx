@@ -4,7 +4,9 @@ import { type MotionValue, motion, useReducedMotion, useScroll, useTransform } f
 import { cn } from "@/lib/utils";
 
 // Base: Scroll word reveal (motion.dev via 21st.dev) — adaptado para a rolagem da página, com palavras de destaque.
-const REST = 0.14;
+// Sem prender a tela (sticky): as palavras acendem enquanto o parágrafo atravessa a tela, na rolagem normal.
+// Prender a tela deixava um vão preto enorme e dava trancos no celular quando a barra do navegador some/aparece.
+const REST = 0.2;
 const SPAN = 0.8;
 const WINDOW = 0.18;
 
@@ -49,40 +51,39 @@ export function ScrollWordReveal({
   accents?: string[];
   className?: string;
 }) {
-  const target = useRef<HTMLElement>(null);
+  const target = useRef<HTMLParagraphElement>(null);
   const reduced = Boolean(useReducedMotion());
-  const { scrollYProgress } = useScroll({ target, offset: ["start start", "end end"] });
+  // 0 quando o topo do parágrafo entra pela parte de baixo da tela, 1 quando o fim dele passa do meio.
+  const { scrollYProgress } = useScroll({ target, offset: ["start 0.9", "end 0.55"] });
   const words = text.split(" ");
 
   return (
-    <section ref={target} className={cn("relative h-[190vh]", className)} aria-label={text}>
-      <div className="sticky top-0 flex h-screen items-center">
-        <div className="container-lynx grid grid-cols-[auto_1fr] gap-6 sm:gap-10">
-          <div className="relative w-[2px] overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-            <motion.span
-              className="absolute inset-x-0 top-0 h-full origin-top bg-gradient-to-b from-lynx-300 to-emerald-400"
-              style={{ scaleY: reduced ? 1 : scrollYProgress }}
-            />
-          </div>
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">{kicker}</p>
-            <p className="mt-6 max-w-5xl text-balance text-[2rem] font-semibold leading-[1.12] tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.6rem]">
-              {words.map((word, index) => (
-                <Fragment key={`${word}-${index}`}>
-                  <Word
-                    progress={scrollYProgress}
-                    index={index}
-                    count={words.length}
-                    reduced={reduced}
-                    accent={accents.includes(word)}
-                  >
-                    {word}
-                  </Word>
-                  {index < words.length - 1 ? " " : null}
-                </Fragment>
-              ))}
-            </p>
-          </div>
+    <section className={cn("relative py-24 sm:py-32", className)} aria-label={text}>
+      <div className="container-lynx grid grid-cols-[auto_1fr] gap-6 sm:gap-10">
+        <div className="relative w-[2px] overflow-hidden rounded-full bg-white/10" aria-hidden="true">
+          <motion.span
+            className="absolute inset-x-0 top-0 h-full origin-top bg-gradient-to-b from-lynx-300 to-emerald-400"
+            style={{ scaleY: reduced ? 1 : scrollYProgress }}
+          />
+        </div>
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">{kicker}</p>
+          <p ref={target} className="mt-6 max-w-5xl text-balance text-[2rem] font-semibold leading-[1.12] tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.6rem]">
+            {words.map((word, index) => (
+              <Fragment key={`${word}-${index}`}>
+                <Word
+                  progress={scrollYProgress}
+                  index={index}
+                  count={words.length}
+                  reduced={reduced}
+                  accent={accents.includes(word)}
+                >
+                  {word}
+                </Word>
+                {index < words.length - 1 ? " " : null}
+              </Fragment>
+            ))}
+          </p>
         </div>
       </div>
     </section>
