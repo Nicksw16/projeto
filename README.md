@@ -71,11 +71,29 @@ src/
   lib/                    # utilidades (movimento, contexto do WhatsApp, título das páginas)
   index.css               # tema (cores, fontes, animações)
 public/logos/             # logos das integrações (svgl.app)
-vercel.json               # faz qualquer rota abrir o site (navegação no navegador)
+public/_headers           # cabeçalhos de segurança e cache na Cloudflare
+vercel.json               # rotas e cabeçalhos na Vercel
+wrangler.jsonc            # configuração caso a Cloudflare use "Worker" em vez de "Pages"
 ```
 
 ## Publicando
 
-É um site estático. Na **Vercel**, importe o repositório: o comando de build (`npm run build`) e a pasta
-(`dist`) são detectados automaticamente, e o `vercel.json` cuida das rotas. Em outra hospedagem, configure
-para todas as rotas servirem o `index.html`.
+É um site estático (a pasta `dist` gerada por `npm run build`).
+
+**Cloudflare (recomendado, grátis e liberado para uso comercial)** — em *Workers & Pages → Create → Pages →
+Connect to Git*, escolha este repositório e use:
+
+| Campo | Valor |
+| --- | --- |
+| Framework preset | `None` (ou `Vite`) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+
+`public/_headers` aplica os cabeçalhos de segurança e o cache; páginas como `/planos` abrem direto porque o
+Pages serve o `index.html` para qualquer endereço sem arquivo. Se o projeto for criado como *Worker* em vez de
+*Pages*, o `wrangler.jsonc` já está configurado (nome `lynx`, pasta `dist`).
+
+**Vercel** — importe o repositório; build e pasta são detectados sozinhos e o `vercel.json` cuida das rotas e
+dos cabeçalhos. Atenção: o plano grátis (Hobby) da Vercel é só para uso pessoal, não comercial.
+
+Os cabeçalhos de segurança existem em dois lugares (`vercel.json` e `public/_headers`): se mudar um, mude o outro.

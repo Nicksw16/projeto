@@ -1,0 +1,11 @@
+// Configuração para a Cloudflare caso o projeto seja criado como "Worker" (em vez de "Pages").
+// No Pages este arquivo é ignorado: lá basta build "npm run build" e pasta "dist".
+{
+  "name": "lynx",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Qualquer endereço sem arquivo (ex.: /planos) abre o site, que mostra a página certa.
+    "not_found_handling": "single-page-application"
+  }
+}
