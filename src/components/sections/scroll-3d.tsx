@@ -21,12 +21,18 @@ const BEATS = [150, 190, 300, 352, 430, 480, 545, 600, 650];
 
 function hasWebGL2() {
   try {
-    const gl = document.createElement("canvas").getContext("webgl2");
+    const gl = document.createElement("canvas").getContext("webgl2", { failIfMajorPerformanceCaveat: true });
     gl?.getExtension("WEBGL_lose_context")?.loseContext();
     return !!gl;
   } catch {
     return false;
   }
+}
+
+// Aparelhos de pouca memória ou com "economizar dados" ficam com o celular em HTML (leve e também animado).
+function isLowEnd() {
+  const n = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean } };
+  return (n.deviceMemory ?? 8) <= 3 || n.connection?.saveData === true;
 }
 
 const countPassed = (marks: number[], t: number) => marks.reduce((n, m) => (t >= m ? n + 1 : n), 0);
@@ -255,7 +261,7 @@ export function Scroll3D() {
       ([entry]) => {
         if (!entry.isIntersecting) return;
         io.disconnect();
-        if (!hasWebGL2()) return fail();
+        if (isLowEnd() || !hasWebGL2()) return fail();
         import("@/components/three/phone-scene")
           .then(({ mountPhoneScene }) => {
             const stage = stageRef.current;
@@ -285,7 +291,7 @@ export function Scroll3D() {
           })
           .catch(fail);
       },
-      { rootMargin: "50% 0px" },
+      { rootMargin: "100% 0px" },
     );
     io.observe(section);
     return () => {
@@ -300,15 +306,13 @@ export function Scroll3D() {
 
   return (
     <section ref={sectionRef} aria-labelledby="celular-2347" className="relative h-[210svh] overflow-x-clip">
-      <div ref={stageRef} className="sticky top-0 h-svh overflow-hidden">
+      <div ref={stageRef} className="sticky top-0 h-svh overflow-hidden bg-black">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="bg-dots absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_55%_50%_at_68%_55%,black,transparent)] max-lg:[mask-image:radial-gradient(ellipse_80%_45%_at_50%_65%,black,transparent)]" />
           <div
             ref={glowRef}
             className="absolute left-[68%] top-[55%] size-[min(720px,120vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(229_167_69/0.16),rgb(37_211_102/0.05)_45%,transparent_68%)] opacity-60 max-lg:left-1/2 max-lg:top-[64%]"
           />
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink-950 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 to-transparent" />
         </div>
 
         <div
@@ -316,6 +320,10 @@ export function Scroll3D() {
           aria-hidden="true"
           className={cn("pointer-events-none absolute inset-0 transition-opacity duration-700", use3D ? "opacity-100" : "opacity-0")}
         />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink-950 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 to-transparent" />
+        </div>
 
         <div className="container-lynx relative grid h-full content-start lg:grid-cols-12 lg:content-center lg:items-center">
           <div

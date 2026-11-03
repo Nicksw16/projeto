@@ -207,13 +207,15 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   const mobile = matchMedia("(max-width: 767px), (pointer: coarse)").matches;
   let renderer: WebGLRenderer;
   try {
-    renderer = new WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    renderer = // Fundo opaco (preto): sem composição com transparência, que bugava em algumas GPUs de celular.
+    // `failIfMajorPerformanceCaveat` recusa WebGL por software (muito lento) e cai no celular em HTML.
+    renderer = new WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance", failIfMajorPerformanceCaveat: true });
   } catch {
     o.onFail();
     return () => {};
   }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 1.75));
-  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 1.75));
+  renderer.setClearColor(0x000000, 1);
   const canvas = renderer.domElement;
   canvas.setAttribute("aria-hidden", "true");
   canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;";
@@ -466,9 +468,9 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
     .add(S, { zoom: 0.58, duration: 300, ease: "inSine" }, 700)
     // 23:47 — a tela acende (ainda de costas, a luz vaza pelo brilho atrás)
     .add(screenMat, { emissiveIntensity: [0, 1], duration: 45, ease: "outQuad" }, 160)
-    .add(glow, { opacity: [0, 0.5], scale: [0.55, 1], duration: 90, ease: "outQuad" }, 150)
-    .add(glow, { opacity: 0.85, scale: 1.12, duration: 60 }, 595)
-    .add(glow, { opacity: 0.35, duration: 300 }, 700)
+    .add(glow, { opacity: [0, 0.1], scale: [0.55, 1], duration: 90, ease: "outQuad" }, 150)
+    .add(glow, { opacity: 0.2, scale: 1.12, duration: 60 }, 595)
+    .add(glow, { opacity: 0.08, duration: 300 }, 700)
     .add(phone.frameMesh.material[1], { envMapIntensity: [0.5, 1.3], duration: 200 }, 140)
     .add(rim, { intensity: [0.6, 2.4], duration: 90, ease: "outQuad" }, 150)
     .add(rim, { intensity: 1.2, duration: 120 }, 330)
@@ -504,7 +506,19 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   let shown = initial;
   let raf = 0;
   let lastNow = 0;
+  // Guarda de desempenho: se a maioria dos quadros durante a rolagem passa de 50 ms, o aparelho não dá conta
+  // do 3D e voltamos para o celular em HTML.
+  let slow = 0;
+  let sampled = 0;
   const follow = (now: number) => {
+    if (lastNow) {
+      sampled++;
+      if (now - lastNow > 50) slow++;
+      if (sampled === 40) {
+        if (slow > 24 && !disposed) o.onFail();
+        sampled = slow = 0;
+      }
+    }
     const dt = lastNow ? Math.min(0.1, (now - lastNow) / 1000) : 1 / 60;
     lastNow = now;
     shown += (target - shown) * (1 - Math.exp(-dt / SMOOTH));
