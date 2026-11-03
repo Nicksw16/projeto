@@ -27,8 +27,25 @@ const preloadFonts = {
   },
 };
 
+// O CSS (~18 kB) bloqueava a primeira pintura com uma requisição extra; vai dentro do HTML (o CSP já aceita style inline).
+const inlineCss = {
+  name: "inline-css",
+  transformIndexHtml: {
+    order: "post" as const,
+    handler(html: string, ctx: { bundle?: Record<string, { source?: string | Uint8Array }> }) {
+      if (!ctx.bundle) return html;
+      return html.replace(/<link rel="stylesheet"[^>]*href="\/(assets\/[^"]+\.css)"[^>]*>/g, (tag, file: string) => {
+        const css = ctx.bundle?.[file]?.source;
+        if (typeof css !== "string") return tag;
+        delete ctx.bundle[file];
+        return `<style>${css}</style>`;
+      });
+    },
+  },
+};
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), preloadFonts],
+  plugins: [react(), tailwindcss(), preloadFonts, inlineCss],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
