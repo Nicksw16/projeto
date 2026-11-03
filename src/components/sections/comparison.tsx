@@ -46,7 +46,7 @@ export function Comparison() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div className="relative h-full overflow-hidden rounded-[28px] border border-lynx-400/25 bg-gradient-to-br from-ink-700 via-ink-850 to-ink-900 p-7 shadow-[0_30px_100px_-40px_rgb(189_238_54/0.4)] sm:p-9">
+            <div className="relative h-full overflow-hidden rounded-[28px] border border-lynx-400/25 bg-gradient-to-br from-ink-700 via-ink-850 to-ink-900 p-7 shadow-[0_30px_100px_-40px_rgb(229_167_69/0.4)] sm:p-9">
               <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-lynx-400/15 blur-3xl" />
               <div className="relative flex items-center gap-3">
                 <span className="flex size-10 items-center justify-center rounded-xl bg-lynx-400/15 ring-1 ring-lynx-400/30">

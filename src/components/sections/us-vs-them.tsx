@@ -24,7 +24,7 @@ export function UsVsThem({
         <SectionHeading eyebrow={eyebrow} title={title} description={description} />
         <div className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-2">
           <Reveal>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-lynx-400/30 bg-gradient-to-b from-ink-700 to-ink-900 shadow-[0_30px_100px_-40px_rgb(189_238_54/0.4)]">
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-lynx-400/30 bg-gradient-to-b from-ink-700 to-ink-900 shadow-[0_30px_100px_-40px_rgb(229_167_69/0.4)]">
               <div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-lynx-400/15 blur-3xl" />
               <div className="relative border-b border-white/[0.07] p-7">
                 <div className="flex items-center gap-2.5">

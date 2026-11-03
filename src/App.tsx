@@ -9,6 +9,7 @@ const AutomacaoPage = lazy(() => import("@/pages/automacao"));
 const ProcessoPage = lazy(() => import("@/pages/processo"));
 const PlanosPage = lazy(() => import("@/pages/planos"));
 const FaqPage = lazy(() => import("@/pages/faq"));
+const PrivacidadePage = lazy(() => import("@/pages/privacidade"));
 const NotFoundPage = lazy(() => import("@/pages/not-found"));
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="processo" element={<ProcessoPage />} />
             <Route path="planos" element={<PlanosPage />} />
             <Route path="faq" element={<FaqPage />} />
+            <Route path="privacidade" element={<PrivacidadePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

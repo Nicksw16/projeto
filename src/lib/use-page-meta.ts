@@ -2,10 +2,30 @@ import { useEffect } from "react";
 
 import { site } from "@/config/site";
 
-// Título e descrição por página (aparecem na aba do navegador e no Google).
-export function usePageMeta(title: string | null, description: string = site.description) {
+const DEFAULT_TITLE = "Lynx — Automação de WhatsApp com IA e Criação de Sites";
+
+function setMeta(selector: string, value: string) {
+  document.querySelector(selector)?.setAttribute("content", value);
+}
+
+// Título, descrição, canonical e prévia de compartilhamento por página.
+// noindex: para páginas que não devem aparecer no Google (ex.: 404).
+export function usePageMeta(title: string | null, description: string = site.description, noindex = false) {
   useEffect(() => {
-    document.title = title ? `${title} | Lynx` : "Lynx — Automação de WhatsApp com IA e Criação de Sites";
-    document.querySelector('meta[name="description"]')?.setAttribute("content", description);
-  }, [title, description]);
+    const fullTitle = title ? `${title} | Lynx` : DEFAULT_TITLE;
+    const url = site.url + window.location.pathname;
+    document.title = fullTitle;
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', fullTitle);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', url);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+
+    if (!noindex) return;
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
+    return () => robots.remove();
+  }, [title, description, noindex]);
 }

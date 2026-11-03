@@ -21,7 +21,7 @@ export function PageHero({
     <section className="relative overflow-hidden pb-16 pt-36 sm:pb-20 sm:pt-44">
       <div className="pointer-events-none absolute inset-0">
         <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_70%_at_50%_0%,black,transparent)]" />
-        <Spotlight className="-top-40 left-0 md:-top-32 md:left-48" fill="#bdee36" />
+        <Spotlight className="-top-40 left-0 md:-top-32 md:left-48" fill="#e5a745" />
         <div className="absolute left-1/2 top-0 h-[380px] w-[680px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-lynx-400/10 blur-[110px]" />
         <div className="noise absolute inset-0 opacity-[0.035] mix-blend-overlay" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-ink-950" />

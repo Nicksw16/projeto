@@ -86,10 +86,10 @@ function envTexture() {
   c.height = 256;
   const ctx = c.getContext("2d")!;
   const bg = ctx.createLinearGradient(0, 0, 0, 256);
-  bg.addColorStop(0, "#3a403b");
-  bg.addColorStop(0.18, "#151915");
-  bg.addColorStop(0.5, "#070907");
-  bg.addColorStop(1, "#020302");
+  bg.addColorStop(0, "#2b4a47");
+  bg.addColorStop(0.18, "#0d201f");
+  bg.addColorStop(0.5, "#051211");
+  bg.addColorStop(1, "#020a09");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, 512, 256);
   ctx.globalCompositeOperation = "lighter";
@@ -102,7 +102,7 @@ function envTexture() {
     ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
   };
   strip(0, 512, 0, 26, "rgba(255,255,255,0.75)");
-  strip(214, 298, 56, 196, "rgba(189,238,54,0.95)");
+  strip(214, 298, 56, 196, "rgba(229,167,69,0.95)");
   strip(470, 512, 64, 176, "rgba(232,240,233,0.85)");
   strip(0, 40, 64, 176, "rgba(232,240,233,0.85)");
   strip(344, 424, 70, 118, "rgba(255,255,255,0.45)");
@@ -120,26 +120,26 @@ function cardTexture() {
   c.height = 352;
   const ctx = c.getContext("2d")!;
   const font = (w: number, s: number) => `${w} ${s}px "Geist Variable", system-ui, sans-serif`;
-  ctx.fillStyle = "#0e110f";
+  ctx.fillStyle = "#0b2220";
   ctx.beginPath();
   ctx.roundRect(4, 4, 632, 344, 40);
   ctx.fill();
-  ctx.strokeStyle = "rgba(189,238,54,0.6)";
+  ctx.strokeStyle = "rgba(229,167,69,0.6)";
   ctx.lineWidth = 3;
   ctx.stroke();
   const hl = ctx.createLinearGradient(0, 0, 0, 180);
-  hl.addColorStop(0, "rgba(189,238,54,0.10)");
-  hl.addColorStop(1, "rgba(189,238,54,0)");
+  hl.addColorStop(0, "rgba(229,167,69,0.10)");
+  hl.addColorStop(1, "rgba(229,167,69,0)");
   ctx.fillStyle = hl;
   ctx.beginPath();
   ctx.roundRect(6, 6, 628, 200, 38);
   ctx.fill();
   // selo lima com check escuro (nunca texto branco sobre lima)
-  ctx.fillStyle = "#bdee36";
+  ctx.fillStyle = "#e5a745";
   ctx.beginPath();
   ctx.arc(104, 150, 54, 0, Math.PI * 2);
   ctx.fill();
-  ctx.strokeStyle = "#050605";
+  ctx.strokeStyle = "#051211";
   ctx.lineWidth = 11;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
@@ -151,7 +151,7 @@ function cardTexture() {
   ctx.fillStyle = "#a3a3a3";
   ctx.font = font(500, 26);
   ctx.fillText("Horário confirmado", 186, 118);
-  ctx.fillStyle = "#e1f99a";
+  ctx.fillStyle = "#f4d792";
   ctx.font = font(600, 56);
   ctx.fillText("Amanhã, 14:00", 184, 182);
   ctx.fillStyle = "#d4d4d4";
@@ -159,7 +159,7 @@ function cardTexture() {
   ctx.fillText("Lembrete enviado 1h antes", 186, 224);
   ctx.fillStyle = "rgba(255,255,255,0.08)";
   ctx.fillRect(40, 266, 560, 2);
-  ctx.fillStyle = "#d0f565";
+  ctx.fillStyle = "#edc065";
   ctx.font = font(600, 23);
   ctx.fillText("✦  Agendado pela IA da Lynx · 23:48", 44, 310);
   const t = new CanvasTexture(c);
@@ -235,7 +235,7 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   const glowTex = glowTexture();
 
   // Recorte lima por trás (desenha a silhueta quando o celular está de costas) + chave branca suave.
-  const rim = new DirectionalLight(0xbdee36, 0);
+  const rim = new DirectionalLight(0xe5a745, 0);
   rim.position.set(-2.5, 1.2, -2.2);
   const key = new DirectionalLight(0xffffff, 0.55);
   key.position.set(2, 2.5, 3);
@@ -252,7 +252,7 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   buzz.add(phone.group);
 
   const glowGeo = new PlaneGeometry(3.4, 3.4);
-  const glowMat = new MeshBasicMaterial({ map: glowTex, color: 0x9fd316, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false });
+  const glowMat = new MeshBasicMaterial({ map: glowTex, color: 0xcc8a2a, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false });
   const glow = new Mesh(glowGeo, glowMat);
   glow.position.z = -0.6;
   rig.add(glow);
@@ -261,7 +261,7 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   const rippleGeo = outline(0.02, 0.018);
   const rippleMats: MeshBasicMaterial[] = [];
   const ripples = [0, 1].map(() => {
-    const m = new MeshBasicMaterial({ color: 0xbdee36, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false, side: DoubleSide });
+    const m = new MeshBasicMaterial({ color: 0xe5a745, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false, side: DoubleSide });
     rippleMats.push(m);
     const mesh = new Mesh(rippleGeo, m);
     mesh.visible = false;
@@ -278,7 +278,7 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   const card = new Mesh(cardGeo, cardMat);
   card.visible = false;
   card.renderOrder = 3;
-  const cardGlowMat = new MeshBasicMaterial({ map: glowTex, color: 0xbdee36, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false });
+  const cardGlowMat = new MeshBasicMaterial({ map: glowTex, color: 0xe5a745, transparent: true, opacity: 0, blending: AdditiveBlending, depthWrite: false });
   const cardGlow = new Mesh(cardGeo, cardGlowMat);
   cardGlow.scale.set(1.9, 2.3, 1);
   cardGlow.position.z = -0.02;
@@ -297,7 +297,7 @@ export async function mountPhoneScene(o: PhoneSceneOptions): Promise<() => void>
   }
   const starGeo = new BufferGeometry();
   starGeo.setAttribute("position", new Float32BufferAttribute(starPos, 3));
-  const starMat = new PointsMaterial({ size: 0.07, map: glowTex, color: 0xe1f99a, transparent: true, opacity: 0, depthWrite: false, blending: AdditiveBlending });
+  const starMat = new PointsMaterial({ size: 0.07, map: glowTex, color: 0xf4d792, transparent: true, opacity: 0, depthWrite: false, blending: AdditiveBlending });
   const stars = new Points(starGeo, starMat);
   scene.add(stars);
 

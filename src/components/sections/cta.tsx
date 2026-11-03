@@ -15,11 +15,11 @@ export function Cta() {
           <div className="relative overflow-hidden rounded-[36px] border border-lynx-400/20 bg-ink-900 px-6 py-16 text-center sm:px-12 sm:py-24">
             <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
             <div className="absolute left-1/2 top-0 h-72 w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lynx-400/25 blur-[100px]" />
-            <div className="absolute -bottom-40 left-1/2 h-80 w-[60%] -translate-x-1/2 rounded-full bg-emerald-500/15 blur-[100px]" />
+            <div className="absolute -bottom-40 left-1/2 h-80 w-[60%] -translate-x-1/2 rounded-full bg-lynx-500/15 blur-[100px]" />
             <div className="noise absolute inset-0 opacity-[0.04] mix-blend-overlay" />
 
             <div className="relative">
-              <LynxMark className="mx-auto size-14 drop-shadow-[0_0_24px_rgb(189_238_54/0.5)]" />
+              <LynxMark className="mx-auto size-14 drop-shadow-[0_0_24px_rgb(229_167_69/0.5)]" />
               <h2 className="mx-auto mt-8 max-w-3xl text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl">
                 Pronto para colocar seu negócio no <span className="font-serif font-normal italic text-lynx-300">modo Lynx?</span>
               </h2>

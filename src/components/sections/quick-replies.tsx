@@ -31,7 +31,7 @@ export function QuickReplies() {
           description="Abre o WhatsApp com a mensagem pronta. É só enviar."
         />
 
-        <div className="relative mx-auto w-full max-w-md rounded-[28px] border border-white/[0.08] bg-[#0b141a] p-5 shadow-[0_40px_120px_-50px_rgb(189_238_54/0.35)]">
+        <div className="relative mx-auto w-full max-w-md rounded-[28px] border border-white/[0.08] bg-[#0b141a] p-5 shadow-[0_40px_120px_-50px_rgb(229_167_69/0.35)]">
           <div className="flex items-center justify-between border-b border-white/[0.06] pb-4">
             <span className="flex items-center gap-2.5">
               <span className="flex size-9 items-center justify-center rounded-full bg-ink-800">

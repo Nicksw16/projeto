@@ -107,6 +107,9 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </p>
+          <Link to="/privacidade" className="transition-colors hover:text-white">
+            Política de privacidade
+          </Link>
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

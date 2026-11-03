@@ -98,7 +98,7 @@ export function BottomNav() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar com a Lynx no WhatsApp"
-          className="relative -mt-7 flex size-16 shrink-0 items-center justify-center rounded-full bg-lynx-400 text-ink-950 shadow-[0_8px_30px_-6px_rgb(189_238_54/0.8)] ring-4 ring-ink-950"
+          className="relative -mt-7 flex size-16 shrink-0 items-center justify-center rounded-full bg-lynx-400 text-ink-950 shadow-[0_8px_30px_-6px_rgb(229_167_69/0.8)] ring-4 ring-ink-950"
         >
           <WhatsAppIcon className="size-7" />
         </a>

@@ -42,7 +42,7 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       <span className="eyebrow">
-        <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(189_238_54)]" />
+        <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(229_167_69)]" />
         {eyebrow}
       </span>
       <h2 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.5rem]">

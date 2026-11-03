@@ -127,7 +127,7 @@ export function NotificationStack({ className }: { className?: string }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                className="absolute inset-x-0 bottom-0 z-20 flex gap-3 rounded-[18px] border border-lynx-400/40 bg-gradient-to-br from-ink-600 to-ink-800 p-3.5 shadow-[0_20px_60px_-15px_rgb(189_238_54/0.5)]"
+                className="absolute inset-x-0 bottom-0 z-20 flex gap-3 rounded-[18px] border border-lynx-400/40 bg-gradient-to-br from-ink-600 to-ink-800 p-3.5 shadow-[0_20px_60px_-15px_rgb(229_167_69/0.5)]"
               >
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-lynx-400/15 ring-1 ring-lynx-400/30">
                   <LynxMark className="size-5" />

@@ -14,7 +14,7 @@ const W = 1280;
 const H = 536;
 const INK = "#e6ebe4";
 const CARD = "#111511";
-const ACCENT = "#bdee36";
+const ACCENT = "#e5a745";
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace';
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
@@ -498,7 +498,7 @@ export function ServicesStack({ services, eyebrow }: { services: Service[]; eyeb
               style={{
                 background:
                   i % 2 === 0
-                    ? "radial-gradient(60% 50% at 75% 50%, rgb(189 238 54 / 0.10), transparent 70%)"
+                    ? "radial-gradient(60% 50% at 75% 50%, rgb(229 167 69 / 0.10), transparent 70%)"
                     : "radial-gradient(60% 50% at 75% 50%, rgb(52 211 153 / 0.12), transparent 70%)",
               }}
             />

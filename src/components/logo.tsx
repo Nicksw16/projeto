@@ -1,26 +1,10 @@
-import { useId } from "react";
-
 import { cn } from "@/lib/utils";
 
-// Marca da Lynx: cabeça de lince geométrica. Troque este SVG pela logo oficial se tiver.
+// Marca da Lynx: o olho do avatar do Instagram, redesenhado em SVG (nítido em qualquer tamanho).
 export function LynxMark({ className }: { className?: string }) {
-  const id = useId();
   return (
-    <svg viewBox="0 0 40 40" className={cn("size-8", className)} aria-hidden="true">
-      <defs>
-        <linearGradient id={`${id}-g`} x1="4" y1="2" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#e1f99a" />
-          <stop offset="0.55" stopColor="#bdee36" />
-          <stop offset="1" stopColor="#34d399" />
-        </linearGradient>
-        <mask id={`${id}-m`}>
-          <path d="M8 4.5 15 13h10l7-8.5 2 14.5 2.5 8.5L29 31l-9 5-9-5-7.5-3.5L6 19z" fill="white" />
-          <path d="M10.5 21.2q4-4.2 8 0-4 2.6-8 0zM21.5 21.2q4-4.2 8 0-4 2.6-8 0z" fill="black" />
-          <path d="M18.4 26.6h3.2L20 28.8z" fill="black" />
-        </mask>
-      </defs>
-      <path d="M8 4.5 7 .8M32 4.5 33 .8" stroke={`url(#${id}-g)`} strokeWidth="1.6" strokeLinecap="round" />
-      <rect width="40" height="40" fill={`url(#${id}-g)`} mask={`url(#${id}-m)`} />
+    <svg viewBox="0 0 576 576" className={cn("size-8", className)} aria-hidden="true">
+      <circle cx="288" cy="288" r="288" fill="#0d2d2b"/><path d="M104 322Q205 212 292 208Q398 212 466 288Q392 386 292 390Q190 386 104 322Z" fill="#f4efe5"/><circle cx="295" cy="298" r="78" fill="#e5a745"/><ellipse cx="292" cy="298" rx="14" ry="60" fill="#102c25"/><path d="M322 247V300L336 288L346 309L357 304L347 284L364 281Z" fill="#f4efe5"/><path d="M100 322L126 300M468 290L507 268" stroke="#f4efe5" strokeWidth="11" strokeLinecap="round" fill="none"/>
     </svg>
   );
 }

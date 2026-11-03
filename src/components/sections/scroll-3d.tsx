@@ -92,7 +92,7 @@ function HtmlPhone({ beat, still }: { beat: number; still: boolean }) {
   return (
     <div
       aria-hidden="true"
-      className="relative aspect-[74/152] w-full rounded-[42px] bg-gradient-to-br from-[#5d665f] via-[#262c27] to-[#3f4741] p-[3px] shadow-[0_50px_120px_-40px_rgb(189_238_54/0.45)]"
+      className="relative aspect-[74/152] w-full rounded-[42px] bg-gradient-to-br from-[#5d665f] via-[#262c27] to-[#3f4741] p-[3px] shadow-[0_50px_120px_-40px_rgb(229_167_69/0.45)]"
     >
       <div className="h-full rounded-[39px] bg-[#030403] p-[6px]">
         <div className="relative h-full overflow-hidden rounded-[33px] bg-[#0b141a] text-[10.5px] leading-snug text-[#e9edef]">
@@ -305,7 +305,7 @@ export function Scroll3D() {
           <div className="bg-dots absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_55%_50%_at_68%_55%,black,transparent)] max-lg:[mask-image:radial-gradient(ellipse_80%_45%_at_50%_65%,black,transparent)]" />
           <div
             ref={glowRef}
-            className="absolute left-[68%] top-[55%] size-[min(720px,120vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(189_238_54/0.16),rgb(37_211_102/0.05)_45%,transparent_68%)] opacity-60 max-lg:left-1/2 max-lg:top-[64%]"
+            className="absolute left-[68%] top-[55%] size-[min(720px,120vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(229_167_69/0.16),rgb(37_211_102/0.05)_45%,transparent_68%)] opacity-60 max-lg:left-1/2 max-lg:top-[64%]"
           />
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink-950 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 to-transparent" />
@@ -325,7 +325,7 @@ export function Scroll3D() {
             style={use3D ? undefined : ({ "--s3d-chat": beat >= 3 ? 1 : 0 } as React.CSSProperties)}
           >
             <span className="eyebrow">
-              <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(189_238_54)]" />
+              <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(229_167_69)]" />
               Simulação · 23h47
             </span>
             <h2
@@ -367,12 +367,12 @@ export function Scroll3D() {
                 {/* trilho da cena 3D */}
                 <span
                   ref={railRef}
-                  className={cn("absolute inset-0 origin-top scale-y-0 bg-gradient-to-b from-lynx-300 to-emerald-400", !use3D && "hidden")}
+                  className={cn("absolute inset-0 origin-top scale-y-0 bg-gradient-to-b from-lynx-300 to-lynx-cream", !use3D && "hidden")}
                 />
                 {/* trilho do celular em HTML */}
                 {!use3D && (
                   <span
-                    className="absolute inset-0 origin-top bg-gradient-to-b from-lynx-300 to-emerald-400 transition-transform duration-500"
+                    className="absolute inset-0 origin-top bg-gradient-to-b from-lynx-300 to-lynx-cream transition-transform duration-500"
                     style={{ transform: `scaleY(${step < 0 ? 0 : (step + 1) / STEPS.length})` }}
                   />
                 )}

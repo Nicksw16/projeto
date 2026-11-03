@@ -38,7 +38,7 @@ function CheckCircle({ done }: { done: boolean }) {
         <motion.path
           d="M5 12.5l4.5 4.5L19 7.5"
           fill="none"
-          stroke="#050605"
+          stroke="#051211"
           strokeWidth={3.5}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -89,7 +89,7 @@ export function YourPart() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-ink-800 to-ink-900 shadow-[0_40px_120px_-50px_rgb(189_238_54/0.3)]">
+          <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-ink-800 to-ink-900 shadow-[0_40px_120px_-50px_rgb(229_167_69/0.3)]">
             <div className="border-b border-white/[0.07] p-6">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">Sua lista</p>
@@ -99,7 +99,7 @@ export function YourPart() {
               </div>
               <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/[0.07]">
                 <motion.div
-                  className="h-full origin-left rounded-full bg-gradient-to-r from-lynx-400 to-emerald-400"
+                  className="h-full origin-left rounded-full bg-gradient-to-r from-lynx-400 to-lynx-cream"
                   initial={false}
                   animate={{ scaleX: progress }}
                   transition={{ duration: 0.5, ease: EASE }}

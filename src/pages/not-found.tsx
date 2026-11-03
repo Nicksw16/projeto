@@ -7,7 +7,7 @@ import { whatsappLink } from "@/config/site";
 import { usePageMeta } from "@/lib/use-page-meta";
 
 export default function NotFoundPage() {
-  usePageMeta("Página não encontrada");
+  usePageMeta("Página não encontrada", undefined, true);
   return (
     <div className="min-h-[70vh]">
       <PageHero

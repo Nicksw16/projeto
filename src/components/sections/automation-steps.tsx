@@ -163,7 +163,7 @@ function Screen({ index }: { index: number }) {
   const Visual = visuals[index];
   const step = steps[index];
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-ink-800 to-ink-900 p-5 shadow-[0_40px_120px_-50px_rgb(189_238_54/0.35)] sm:p-7">
+    <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-ink-800 to-ink-900 p-5 shadow-[0_40px_120px_-50px_rgb(229_167_69/0.35)] sm:p-7">
       <div className="bg-dots pointer-events-none absolute inset-0 opacity-30" />
       <div className="relative mb-5 flex items-center justify-between">
         <span className="inline-flex items-center gap-2 text-xs font-medium text-neutral-400">

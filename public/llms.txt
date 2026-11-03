@@ -1,0 +1,18 @@
+# Lynx
+
+> Agência brasileira de automação de WhatsApp com IA e criação de sites de alta conversão. Atendimento, qualificação de leads e vendas 24 horas por dia.
+
+## Páginas
+
+- [Início](https://site-lynx.vercel.app/): visão geral dos serviços
+- [Serviços](https://site-lynx.vercel.app/servicos): criação de sites, landing pages e lojas virtuais
+- [Automação](https://site-lynx.vercel.app/automacao): chatbots e fluxos de WhatsApp com IA
+- [Processo](https://site-lynx.vercel.app/processo): como o projeto é feito, da conversa à entrega
+- [Planos](https://site-lynx.vercel.app/planos): comparação de planos
+- [FAQ](https://site-lynx.vercel.app/faq): dúvidas sobre preço, prazo, suporte e funcionamento
+- [Privacidade](https://site-lynx.vercel.app/privacidade): como tratamos dados pessoais
+
+## Contato
+
+- Instagram: https://www.instagram.com/lynx.automation/
+- WhatsApp: botão "Falar no WhatsApp" em qualquer página do site

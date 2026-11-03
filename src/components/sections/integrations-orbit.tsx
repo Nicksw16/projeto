@@ -128,7 +128,7 @@ export function IntegrationsOrbit() {
             <Ring items={inner} radius={28} duration={48} size="size-12 sm:size-14" />
             <Ring items={outer} radius={46} duration={80} reverse size="size-11 sm:size-12" />
 
-            <div className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[26px] border border-lynx-400/30 bg-ink-900 shadow-[0_0_60px_-10px_rgb(189_238_54/0.5)] sm:size-24">
+            <div className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[26px] border border-lynx-400/30 bg-ink-900 shadow-[0_0_60px_-10px_rgb(229_167_69/0.5)] sm:size-24">
               <span className="absolute inset-0 animate-pulse-ring rounded-[26px] border border-lynx-400/40" />
               <LynxMark className="size-11 sm:size-12" />
             </div>

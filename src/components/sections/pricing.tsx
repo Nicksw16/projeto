@@ -66,7 +66,7 @@ function PlanCard({ plan }: { plan: (typeof plans)[number] }) {
       className={cn(
         "relative flex h-full flex-col overflow-hidden rounded-[28px] border p-7 sm:p-8",
         featured
-          ? "border-lynx-400/30 bg-gradient-to-b from-ink-700 via-ink-850 to-ink-900 shadow-[0_30px_100px_-30px_rgb(189_238_54/0.35)]"
+          ? "border-lynx-400/30 bg-gradient-to-b from-ink-700 via-ink-850 to-ink-900 shadow-[0_30px_100px_-30px_rgb(229_167_69/0.35)]"
           : "border-white/[0.08] bg-ink-900",
       )}
     >

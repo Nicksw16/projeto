@@ -58,7 +58,7 @@ function StepCard({ index, className }: { index: number; className?: string }) {
         className,
       )}
     >
-      <span className="absolute -top-3.5 left-1/2 flex size-7 -translate-x-1/2 items-center justify-center rounded-full border border-lynx-400/40 bg-ink-950 text-lynx-300 shadow-[0_0_20px_-4px_rgb(189_238_54/0.6)]">
+      <span className="absolute -top-3.5 left-1/2 flex size-7 -translate-x-1/2 items-center justify-center rounded-full border border-lynx-400/40 bg-ink-950 text-lynx-300 shadow-[0_0_20px_-4px_rgb(229_167_69/0.6)]">
         <Pin className="size-3.5 rotate-45" />
       </span>
       <div className="flex items-baseline gap-3">
@@ -105,7 +105,7 @@ export function HowItWorks() {
             <motion.path
               d={PATH}
               fill="none"
-              stroke="#bdee36"
+              stroke="#e5a745"
               strokeWidth="2"
               strokeLinecap="round"
               strokeDasharray="10 14"
@@ -118,7 +118,7 @@ export function HowItWorks() {
                 opacity: { duration: 1.2 },
                 strokeDashoffset: { duration: 4, repeat: Infinity, ease: "linear" },
               }}
-              style={{ filter: "drop-shadow(0 0 6px rgb(189 238 54 / 0.5))" }}
+              style={{ filter: "drop-shadow(0 0 6px rgb(229 167 69 / 0.5))" }}
             />
           </svg>
 

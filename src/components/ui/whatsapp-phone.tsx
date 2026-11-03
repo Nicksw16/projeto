@@ -100,7 +100,7 @@ export function WhatsAppPhone({ className, script = DEFAULT_SCRIPT }: { classNam
 
   return (
     <div className={cn("relative mx-auto w-full max-w-[300px] select-none", className)}>
-      <div className="relative flex h-[580px] w-full flex-col overflow-hidden rounded-[46px] border border-white/10 bg-neutral-950 p-2.5 shadow-[0_40px_120px_-30px_rgb(189_238_54/0.35),inset_0_0_0_1px_rgb(255_255_255/0.04)]">
+      <div className="relative flex h-[580px] w-full flex-col overflow-hidden rounded-[46px] border border-white/10 bg-neutral-950 p-2.5 shadow-[0_40px_120px_-30px_rgb(229_167_69/0.35),inset_0_0_0_1px_rgb(255_255_255/0.04)]">
         <div className="absolute -left-[3px] top-28 h-8 w-[3px] rounded-l bg-neutral-800" />
         <div className="absolute -left-[3px] top-40 h-12 w-[3px] rounded-l bg-neutral-800" />
         <div className="absolute -right-[3px] top-36 h-16 w-[3px] rounded-r bg-neutral-800" />
@@ -128,7 +128,7 @@ export function WhatsAppPhone({ className, script = DEFAULT_SCRIPT }: { classNam
           <div className="z-20 flex shrink-0 items-center justify-between border-b border-white/5 bg-[#111b21] px-3 py-2">
             <div className="flex items-center gap-2">
               <ArrowLeft className="size-4 text-neutral-300" />
-              <div className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-lynx-300 to-emerald-500 text-ink-950">
+              <div className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-lynx-300 to-lynx-500 text-ink-950">
                 <Store className="size-4" />
               </div>
               <div className="leading-tight">

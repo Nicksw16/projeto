@@ -16,17 +16,17 @@ interface GlowingEffectProps {
   borderWidth?: number;
 }
 
-const LYNX_GRADIENT = `radial-gradient(circle, #d0f565 10%, #d0f56500 20%),
-  radial-gradient(circle at 40% 40%, #34d399 5%, #34d39900 15%),
-  radial-gradient(circle at 60% 60%, #bdee36 10%, #bdee3600 20%),
-  radial-gradient(circle at 40% 60%, #2dd4bf 10%, #2dd4bf00 20%),
+const LYNX_GRADIENT = `radial-gradient(circle, #edc065 10%, #edc06500 20%),
+  radial-gradient(circle at 40% 40%, #f4efe5 5%, #f4efe500 15%),
+  radial-gradient(circle at 60% 60%, #e5a745 10%, #e5a74500 20%),
+  radial-gradient(circle at 40% 60%, #e5a745 10%, #e5a74500 20%),
   repeating-conic-gradient(
     from 236.84deg at 50% 50%,
-    #d0f565 0%,
-    #34d399 calc(25% / var(--repeating-conic-gradient-times)),
-    #bdee36 calc(50% / var(--repeating-conic-gradient-times)),
-    #2dd4bf calc(75% / var(--repeating-conic-gradient-times)),
-    #d0f565 calc(100% / var(--repeating-conic-gradient-times))
+    #edc065 0%,
+    #f4efe5 calc(25% / var(--repeating-conic-gradient-times)),
+    #e5a745 calc(50% / var(--repeating-conic-gradient-times)),
+    #e5a745 calc(75% / var(--repeating-conic-gradient-times)),
+    #edc065 calc(100% / var(--repeating-conic-gradient-times))
   )`;
 
 const GlowingEffect = memo(

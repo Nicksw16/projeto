@@ -7,21 +7,23 @@
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
 
-  --color-ink-950: #050605;
-  --color-ink-900: #0a0c0a;
-  --color-ink-850: #0e110f;
-  --color-ink-800: #131714;
-  --color-ink-700: #1b201c;
-  --color-ink-600: #262c27;
+  --color-ink-950: #051211;
+  --color-ink-900: #081a18;
+  --color-ink-850: #0b2220;
+  --color-ink-800: #0d2d2b;
+  --color-ink-700: #14403d;
+  --color-ink-600: #1d514d;
 
-  --color-lynx-50: #f8fee8;
-  --color-lynx-100: #effcc9;
-  --color-lynx-200: #e1f99a;
-  --color-lynx-300: #d0f565;
-  --color-lynx-400: #bdee36;
-  --color-lynx-500: #9fd316;
-  --color-lynx-600: #7ba80d;
-  --color-lynx-700: #5c7f0f;
+  --color-lynx-50: #fdf7ea;
+  --color-lynx-100: #faebc9;
+  --color-lynx-200: #f4d792;
+  --color-lynx-300: #edc065;
+  --color-lynx-400: #e5a745;
+  --color-lynx-500: #cc8a2a;
+  --color-lynx-600: #a66d1f;
+  --color-lynx-700: #7f5219;
+
+  --color-lynx-cream: #f4efe5;
 
   --color-wa: #25d366;
 
@@ -99,7 +101,7 @@
   }
 
   body {
-    @apply bg-ink-950 font-sans text-neutral-100 antialiased;
+    @apply bg-ink-950 font-sans text-lynx-cream antialiased;
     font-feature-settings: "ss01", "cv11";
     text-rendering: optimizeLegibility;
   }
@@ -123,7 +125,7 @@
   }
 
   .text-gradient-lynx {
-    @apply bg-gradient-to-r from-lynx-200 via-lynx-400 to-emerald-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-lynx-200 via-lynx-400 to-lynx-cream bg-clip-text text-transparent;
     background-size: 200% auto;
   }
 

@@ -101,14 +101,14 @@ export function createPhone(screenTexture: Texture): PhoneModel {
     }),
   );
   body.translate(0, 0, -depth / 2);
-  const backMat = mat(new MeshStandardMaterial({ color: 0x2c332e, metalness: 0.55, roughness: 0.3 }));
-  const frameMat = mat(new MeshStandardMaterial({ color: 0x737c75, metalness: 1, roughness: 0.24, envMapIntensity: 1.2 }));
+  const backMat = mat(new MeshStandardMaterial({ color: 0x1f3a37, metalness: 0.55, roughness: 0.3 }));
+  const frameMat = mat(new MeshStandardMaterial({ color: 0x8a8f86, metalness: 1, roughness: 0.24, envMapIntensity: 1.2 }));
   const frameMesh = new Mesh(body, [backMat, frameMat]);
   group.add(frameMesh);
 
   // Vidro frontal (preto brilhante) e tela emissiva logo acima.
   const front = d / 2;
-  const glassMat = mat(new MeshStandardMaterial({ color: 0x030403, metalness: 0.1, roughness: 0.08 }));
+  const glassMat = mat(new MeshStandardMaterial({ color: 0x030504, metalness: 0.1, roughness: 0.08 }));
   const glass = new Mesh(track(flatRounded(w - bevel * 2, h - bevel * 2, r - bevel)), glassMat);
   glass.position.z = front + 0.0004;
   group.add(glass);

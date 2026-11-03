@@ -17,10 +17,10 @@ const C = {
   meta: "rgba(233,237,239,0.62)",
   muted: "#8696a0",
   tick: "#53bdeb",
-  lime: "#bdee36",
-  lime300: "#d0f565",
-  lime200: "#e1f99a",
-  ink: "#050605",
+  lime: "#e5a745",
+  lime300: "#edc065",
+  lime200: "#f4d792",
+  ink: "#051211",
   wa: "#25d366",
 };
 
@@ -190,7 +190,7 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
     const g = ctx.createLinearGradient(4, 2, 36, 38);
     g.addColorStop(0, C.lime200);
     g.addColorStop(0.55, C.lime);
-    g.addColorStop(1, "#34d399");
+    g.addColorStop(1, "#f4efe5");
     ctx.fillStyle = g;
     ctx.fill(new Path2D(LYNX_HEAD));
     ctx.fillStyle = bg;
@@ -265,9 +265,9 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
   const paintLockBase = () => {
     const l = lockBase.getContext("2d")!;
     const g = l.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, "#050a07");
-    g.addColorStop(0.55, "#08130d");
-    g.addColorStop(1, "#0c1d12");
+    g.addColorStop(0, "#051211");
+    g.addColorStop(0.55, "#08201e");
+    g.addColorStop(1, "#0b2a27");
     l.fillStyle = g;
     l.fillRect(0, 0, W, H);
     const glow = (x: number, yy: number, r: number, color: string) => {
@@ -277,7 +277,7 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
       l.fillStyle = rg;
       l.fillRect(0, 0, W, H);
     };
-    glow(300, PH - 90, 330, "rgba(189,238,54,0.20)");
+    glow(300, PH - 90, 330, "rgba(229,167,69,0.20)");
     glow(40, PH - 30, 260, "rgba(37,211,102,0.16)");
     // estrelas (determinísticas)
     let seed = 7;
@@ -291,7 +291,7 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
       l.fill();
     }
     drawWith(l, () => {
-      moon(306, 92, 10, "rgba(239,252,201,0.9)", "#060c08");
+      moon(306, 92, 10, "rgba(250,235,201,0.9)", "#051211");
       text("quinta-feira", 180, 132, 500, 17, "rgba(255,255,255,0.78)", "center");
       text("23:47", 180, 222, 300, 92, "#ffffff", "center");
       // atalhos da tela de bloqueio
@@ -392,13 +392,13 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
       const nw = measure(notice, 500, 12) + 40;
       const nx = 180 - nw / 2;
       const ny = dy + 32;
-      ctx.fillStyle = "rgba(189,238,54,0.09)";
+      ctx.fillStyle = "rgba(229,167,69,0.09)";
       rr(ctx, nx * U, ny * U, nw * U, 26 * U, 9 * U);
       ctx.fill();
-      ctx.strokeStyle = "rgba(189,238,54,0.28)";
+      ctx.strokeStyle = "rgba(229,167,69,0.28)";
       ctx.lineWidth = 1 * U;
       ctx.stroke();
-      moon(nx + 15, ny + 13, 5.5, C.lime300, "#0f1a14");
+      moon(nx + 15, ny + 13, 5.5, C.lime300, "#081a18");
       text(notice, nx + 26, ny + 17.5, 500, 12, C.lime300);
       // barra de digitação
       ctx.fillStyle = C.header;
@@ -472,7 +472,7 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
       SLOTS.forEach((slot, i) => {
         const bx = it.x + PAD + i * (bw + gap);
         const on = slot === PICKED_SLOT ? picked : 0;
-        ctx.fillStyle = on > 0 ? `rgba(189,238,54,${0.15 + 0.85 * on})` : "rgba(255,255,255,0.09)";
+        ctx.fillStyle = on > 0 ? `rgba(229,167,69,${0.15 + 0.85 * on})` : "rgba(255,255,255,0.09)";
         rr(ctx, bx * U, yy * U, bw * U, 30 * U, 15 * U);
         ctx.fill();
         text(slot, bx + bw / 2, yy + 20, 600, 14.5, on > 0.5 ? C.ink : "#d9fdd3", "center");
@@ -483,10 +483,10 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
       yy += 6;
       const bx = it.x + PAD;
       const bw = it.w - PAD * 2;
-      ctx.fillStyle = "rgba(5,6,5,0.38)";
+      ctx.fillStyle = "rgba(5,18,17,0.38)";
       rr(ctx, bx * U, yy * U, bw * U, 54 * U, 10 * U);
       ctx.fill();
-      ctx.strokeStyle = "rgba(189,238,54,0.35)";
+      ctx.strokeStyle = "rgba(229,167,69,0.35)";
       ctx.lineWidth = 1 * U;
       ctx.stroke();
       ctx.fillStyle = C.lime;
@@ -549,7 +549,7 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
     const y0 = 292 + (1 - e) * 36;
     ctx.save();
     ctx.globalAlpha = Math.min(1, a * 1.6);
-    ctx.fillStyle = "rgba(34,41,37,0.86)";
+    ctx.fillStyle = "rgba(13,45,43,0.86)";
     rr(ctx, x * U, y0 * U, 336 * U, 92 * U, 24 * U);
     ctx.fill();
     ctx.strokeStyle = "rgba(255,255,255,0.07)";
@@ -579,17 +579,17 @@ export function createChatScreen(width: number, aspect: number): ChatScreen {
     ctx.globalAlpha = Math.min(1, a * 1.8);
     ctx.shadowColor = "rgba(0,0,0,0.55)";
     ctx.shadowBlur = 24 * U;
-    ctx.fillStyle = "rgba(22,28,24,0.97)";
+    ctx.fillStyle = "rgba(10,34,32,0.97)";
     rr(ctx, x * U, y0 * U, 340 * U, 96 * U, 24 * U);
     ctx.fill();
     ctx.shadowColor = "transparent";
-    ctx.strokeStyle = "rgba(189,238,54,0.38)";
+    ctx.strokeStyle = "rgba(229,167,69,0.38)";
     ctx.lineWidth = 1.2 * U;
     ctx.stroke();
-    ctx.fillStyle = "#0e110f";
+    ctx.fillStyle = "#0b2220";
     rr(ctx, (x + 14) * U, (y0 + 18) * U, 44 * U, 44 * U, 12 * U);
     ctx.fill();
-    lynxMark(x + 18, y0 + 22, 36, "#0e110f");
+    lynxMark(x + 18, y0 + 22, 36, "#0b2220");
     text("Lynx · resumo", x + 70, y0 + 29, 600, 13, C.lime300);
     text("agora", x + 326, y0 + 29, 400, 13, "rgba(255,255,255,0.5)", "right");
     text(SUMMARY.title, x + 70, y0 + 54, 600, 15.5, "#ffffff");

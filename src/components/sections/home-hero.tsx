@@ -27,7 +27,7 @@ export function HomeHero() {
     <section className="relative overflow-hidden pb-16 pt-32 sm:pt-40 lg:pb-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
-        <Spotlight className="-top-40 left-0 md:-top-24 md:left-40" fill="#bdee36" />
+        <Spotlight className="-top-40 left-0 md:-top-24 md:left-40" fill="#e5a745" />
         <div className="absolute right-[-10%] top-1/3 h-[520px] w-[520px] rounded-full bg-lynx-400/10 blur-[120px]" />
         <div className="noise absolute inset-0 opacity-[0.035] mix-blend-overlay" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950" />
@@ -36,7 +36,7 @@ export function HomeHero() {
       <div className="container-lynx relative grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <motion.p {...fadeUp(0.05)} className="eyebrow">
-            <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(189_238_54)]" />
+            <span className="size-1.5 rounded-full bg-lynx-400 shadow-[0_0_8px_rgb(229_167_69)]" />
             Para clínicas, salões, lojas e restaurantes
           </motion.p>
 
@@ -80,7 +80,7 @@ export function HomeHero() {
         </div>
 
         <motion.div {...fadeUp(0.35)} className="relative lg:col-span-5">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-lynx-400/20 to-emerald-500/15 blur-[90px]" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-lynx-400/20 to-lynx-500/15 blur-[90px]" />
           <NotificationStack />
         </motion.div>
       </div>

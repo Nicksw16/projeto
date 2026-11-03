@@ -75,8 +75,8 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        style={{ background: `linear-gradient(to right, #bdee36 ${pct}%, rgb(255 255 255 / 0.1) ${pct}%)` }}
-        className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-lynx-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900 [&::-moz-range-thumb]:size-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-ink-900 [&::-moz-range-thumb]:bg-lynx-300 [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink-900 [&::-webkit-slider-thumb]:bg-lynx-300 [&::-webkit-slider-thumb]:shadow-[0_0_0_1px_rgb(189_238_54/0.6)]"
+        style={{ background: `linear-gradient(to right, #e5a745 ${pct}%, rgb(255 255 255 / 0.1) ${pct}%)` }}
+        className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-lynx-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900 [&::-moz-range-thumb]:size-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-ink-900 [&::-moz-range-thumb]:bg-lynx-300 [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink-900 [&::-webkit-slider-thumb]:bg-lynx-300 [&::-webkit-slider-thumb]:shadow-[0_0_0_1px_rgb(229_167_69/0.6)]"
       />
     </div>
   );

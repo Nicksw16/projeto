@@ -51,7 +51,7 @@ export function AutomationVisual() {
             className={cn(
               "flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm",
               tone === "lynx"
-                ? "border-lynx-400/30 bg-lynx-400/10 text-lynx-200 shadow-[0_0_30px_-8px_rgb(189_238_54/0.5)]"
+                ? "border-lynx-400/30 bg-lynx-400/10 text-lynx-200 shadow-[0_0_30px_-8px_rgb(229_167_69/0.5)]"
                 : "border-white/10 bg-white/[0.03] text-neutral-200",
             )}
           >
@@ -114,7 +114,7 @@ export function WebsiteVisual() {
           </div>
           <div className="space-y-1.5 pt-3">
             <span className="block h-3 w-4/5 rounded-full bg-white/80" />
-            <span className="block h-3 w-3/5 rounded-full bg-gradient-to-r from-lynx-300 to-emerald-400" />
+            <span className="block h-3 w-3/5 rounded-full bg-gradient-to-r from-lynx-300 to-lynx-cream" />
           </div>
           <span className="block h-1.5 w-2/3 rounded-full bg-white/15" />
           <span className="block h-1.5 w-1/2 rounded-full bg-white/15" />
@@ -137,7 +137,7 @@ export function WebsiteVisual() {
       >
         <span className="mx-auto mb-2 block h-1 w-6 rounded-full bg-white/15" />
         <span className="block h-1.5 w-full rounded-full bg-white/70" />
-        <span className="mt-1 block h-1.5 w-3/4 rounded-full bg-gradient-to-r from-lynx-300 to-emerald-400" />
+        <span className="mt-1 block h-1.5 w-3/4 rounded-full bg-gradient-to-r from-lynx-300 to-lynx-cream" />
         <span className="mt-2 block h-1 w-full rounded-full bg-white/15" />
         <span className="mt-1 block h-1 w-2/3 rounded-full bg-white/15" />
         <span className="mt-2 block h-3 w-full rounded-full bg-lynx-400" />

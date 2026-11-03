@@ -1,5 +1,8 @@
 // Dados da empresa — edite aqui e o site inteiro é atualizado.
 export const site = {
+  // Endereço público do site, sem barra no final. Troque quando o domínio próprio estiver no ar
+  // (e atualize também index.html, public/sitemap.xml, public/robots.txt e public/llms.txt).
+  url: "https://site-lynx.vercel.app",
   name: "Lynx",
   tagline: "Automação de WhatsApp e criação de sites",
   description:
@@ -9,9 +12,11 @@ export const site = {
   // Deixe vazio ("") para esconder do site. Não use contatos que não sejam da Lynx:
   // @lynx no Instagram e o domínio lynx.com.br pertencem a outras pessoas.
   email: "",
-  instagram: "",
-  instagramHandle: "",
+  instagram: "https://www.instagram.com/lynx.automation/",
+  instagramHandle: "@lynx.automation",
   city: "Brasil",
+  // CNPJ ou CPF do responsável. Aparece na política de privacidade se preenchido.
+  cnpj: "",
   // Horário em que alguém da Lynx responde. Usado no selo "Online agora / Respondemos às 9h".
   hours: { days: [1, 2, 3, 4, 5], open: 9, close: 18, timeZone: "America/Sao_Paulo" },
 };

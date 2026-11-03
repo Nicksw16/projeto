@@ -62,7 +62,7 @@ export function ScrollWordReveal({
       <div className="container-lynx grid grid-cols-[auto_1fr] gap-6 sm:gap-10">
         <div className="relative w-[2px] overflow-hidden rounded-full bg-white/10" aria-hidden="true">
           <motion.span
-            className="absolute inset-x-0 top-0 h-full origin-top bg-gradient-to-b from-lynx-300 to-emerald-400"
+            className="absolute inset-x-0 top-0 h-full origin-top bg-gradient-to-b from-lynx-300 to-lynx-cream"
             style={{ scaleY: reduced ? 1 : scrollYProgress }}
           />
         </div>

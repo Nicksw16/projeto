@@ -51,7 +51,7 @@ export function FaqExplorer() {
     <section className="relative pb-24 sm:pb-32">
       <div className="container-lynx max-w-3xl">
         <Reveal>
-          <label className="group relative flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-ink-900 px-5 transition-colors focus-within:border-lynx-400/50 focus-within:shadow-[0_0_0_4px_rgb(189_238_54/0.08)]">
+          <label className="group relative flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-ink-900 px-5 transition-colors focus-within:border-lynx-400/50 focus-within:shadow-[0_0_0_4px_rgb(229_167_69/0.08)]">
             <Search className="size-5 shrink-0 text-neutral-500 group-focus-within:text-lynx-300" />
             <span className="sr-only">Buscar uma dúvida</span>
             <input

@@ -25,7 +25,7 @@ export function ButtonLink({ variant = "primary", size = "md", className, childr
         size === "md" && "h-11 px-5 text-sm",
         size === "lg" && "h-13 px-7 text-[15px]",
         variant === "primary" &&
-          "bg-lynx-400 text-ink-950 shadow-[0_0_0_1px_rgb(189_238_54/0.4),0_8px_32px_-8px_rgb(189_238_54/0.6),inset_0_1px_0_rgb(255_255_255/0.5)] hover:bg-lynx-300 hover:shadow-[0_0_0_1px_rgb(208_245_101/0.6),0_12px_40px_-8px_rgb(189_238_54/0.8),inset_0_1px_0_rgb(255_255_255/0.5)]",
+          "bg-lynx-400 text-ink-950 shadow-[0_0_0_1px_rgb(229_167_69/0.4),0_8px_32px_-8px_rgb(229_167_69/0.6),inset_0_1px_0_rgb(255_255_255/0.5)] hover:bg-lynx-300 hover:shadow-[0_0_0_1px_rgb(237_192_101/0.6),0_12px_40px_-8px_rgb(229_167_69/0.8),inset_0_1px_0_rgb(255_255_255/0.5)]",
         variant === "secondary" &&
           "border border-white/12 bg-white/[0.04] text-white backdrop-blur hover:border-white/25 hover:bg-white/[0.08]",
         variant === "ghost" && "text-neutral-300 hover:text-white",

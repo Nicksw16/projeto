@@ -117,7 +117,7 @@ export function Navbar() {
                     {({ isActive }) => (
                       <>
                         {item.label}
-                        {isActive && <span className="size-2 rounded-full bg-lynx-400 shadow-[0_0_10px_rgb(189_238_54)]" />}
+                        {isActive && <span className="size-2 rounded-full bg-lynx-400 shadow-[0_0_10px_rgb(229_167_69)]" />}
                       </>
                     )}
                   </NavLink>

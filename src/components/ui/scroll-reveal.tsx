@@ -25,7 +25,7 @@ export function ScrollReveal({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative mx-auto overflow-hidden shadow-[0_40px_120px_-30px_rgb(189_238_54/0.25)]", className)}
+      className={cn("relative mx-auto overflow-hidden shadow-[0_40px_120px_-30px_rgb(229_167_69/0.25)]", className)}
       style={reduced ? { height, borderRadius: 28 } : { width, height, borderRadius: radius }}
     >
       <motion.div className="h-full w-full origin-top" style={reduced ? undefined : { scale }}>

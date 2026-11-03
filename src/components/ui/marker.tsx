@@ -19,7 +19,7 @@ export function Marker({ children, className, delay = 0.5 }: { children: React.R
       <motion.span
         className="relative"
         initial={reduced ? false : { color: "currentColor" }}
-        whileInView={{ color: "#050605" }}
+        whileInView={{ color: "#051211" }}
         viewport={{ once: true }}
         transition={{ duration: 0.25, delay: delay + 0.18 }}
       >
