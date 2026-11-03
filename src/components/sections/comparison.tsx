@@ -36,7 +36,7 @@ export function Comparison() {
               </div>
               <ul className="mt-8 space-y-4">
                 {rows.map((row) => (
-                  <li key={row.without} className="flex items-start gap-3 text-neutral-500">
+                  <li key={row.without} className="flex items-start gap-3 text-neutral-400">
                     <X className="mt-0.5 size-4 shrink-0 text-red-400/70" strokeWidth={2.5} />
                     <span className="line-through decoration-white/15">{row.without}</span>
                   </li>

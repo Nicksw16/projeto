@@ -104,7 +104,7 @@ export function IntegrationsOrbit() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-neutral-500">
+            <p className="mt-6 text-sm text-neutral-400">
               Usa outro sistema? Se ele tiver integração disponível, a gente conecta. Pergunte antes de fechar.
             </p>
             <ButtonLink

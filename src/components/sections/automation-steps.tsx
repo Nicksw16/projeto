@@ -80,7 +80,7 @@ function VisualEntende() {
         queria fazer as unha e a sobrancelha mas so consigo dps do trabalho
       </Bubble>
       <div className="rounded-2xl border border-white/[0.08] bg-ink-950/60 p-4">
-        <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-500">
+        <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-400">
           <Sparkles className="size-3.5 text-lynx-300" />O que a IA entendeu
         </p>
         <div className="mt-3 flex flex-col gap-2">
@@ -146,7 +146,7 @@ function VisualChama() {
         </div>
       </div>
       <div className="mt-4 rounded-xl bg-white/[0.04] p-3 text-[13px] leading-relaxed text-neutral-300">
-        <span className="mb-1 block text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-500">Resumo da conversa</span>
+        <span className="mb-1 block text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-400">Resumo da conversa</span>
         Pedido #482 chegou com um item faltando. Cliente quer troca ou reembolso e prefere falar com uma pessoa.
       </div>
       <div className="mt-4 grid grid-cols-2 gap-2">
@@ -170,7 +170,7 @@ function Screen({ index }: { index: number }) {
           <step.icon className="size-4 text-lynx-300" />
           {step.kicker}
         </span>
-        <span className="rounded-full border border-white/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] text-neutral-500">Simulação</span>
+        <span className="rounded-full border border-white/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] text-neutral-400">Simulação</span>
       </div>
       <div className="relative">
         <Visual />

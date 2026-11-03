@@ -124,12 +124,12 @@ export function YourPart() {
                         <span
                           className={cn(
                             "block text-[15px] font-medium transition-colors duration-300",
-                            isDone ? "text-neutral-500 line-through decoration-lynx-400/60" : "text-white",
+                            isDone ? "text-neutral-400 line-through decoration-lynx-400/60" : "text-white",
                           )}
                         >
                           {t.title}
                         </span>
-                        <span className="block text-[13px] text-neutral-500">{t.detail}</span>
+                        <span className="block text-[13px] text-neutral-400">{t.detail}</span>
                       </span>
                     </button>
                   </li>

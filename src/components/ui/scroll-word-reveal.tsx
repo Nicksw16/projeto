@@ -67,7 +67,7 @@ export function ScrollWordReveal({
           />
         </div>
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">{kicker}</p>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">{kicker}</p>
           <p ref={target} className="mt-6 max-w-5xl text-balance text-[2rem] font-semibold leading-[1.12] tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.6rem]">
             {words.map((word, index) => (
               <Fragment key={`${word}-${index}`}>

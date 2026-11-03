@@ -61,7 +61,7 @@ function Slider({
       <div className="flex items-end justify-between gap-4">
         <label htmlFor={id} className="text-sm font-medium text-neutral-200">
           {label}
-          {hint && <span className="mt-0.5 block text-xs font-normal text-neutral-500">{hint}</span>}
+          {hint && <span className="mt-0.5 block text-xs font-normal text-neutral-400">{hint}</span>}
         </label>
         <span className="shrink-0 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-sm font-semibold tabular-nums text-white">
           {value} <span className="font-normal text-neutral-400">{suffix}</span>
@@ -160,10 +160,10 @@ export function RoiCalculator() {
               <div>
                 <label htmlFor="hour-value" className="text-sm font-medium text-neutral-200">
                   Quanto vale uma hora sua?
-                  <span className="mt-0.5 block text-xs font-normal text-neutral-500">Ou de quem responde por você</span>
+                  <span className="mt-0.5 block text-xs font-normal text-neutral-400">Ou de quem responde por você</span>
                 </label>
                 <div className="mt-3 flex h-11 items-center rounded-xl border border-white/10 bg-white/[0.03] px-3 focus-within:border-lynx-400/50">
-                  <span className="text-sm text-neutral-500">R$</span>
+                  <span className="text-sm text-neutral-400">R$</span>
                   <input
                     id="hour-value"
                     type="number"
@@ -174,7 +174,7 @@ export function RoiCalculator() {
                     onChange={(e) => setHourValue(Math.max(0, Math.min(1000, Number(e.target.value) || 0)))}
                     className="h-full w-full bg-transparent px-2 text-sm font-semibold text-white outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
                   />
-                  <span className="text-sm text-neutral-500">/hora</span>
+                  <span className="text-sm text-neutral-400">/hora</span>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@ export function RoiCalculator() {
                   Mandar esse cálculo no WhatsApp
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </ButtonLink>
-                <p className="mt-3 flex items-start gap-1.5 text-xs leading-relaxed text-neutral-500">
+                <p className="mt-3 flex items-start gap-1.5 text-xs leading-relaxed text-neutral-400">
                   <Info className="mt-px size-3.5 shrink-0" />
                   Estimativa feita só com os números que você colocou. Não é promessa de resultado.
                 </p>

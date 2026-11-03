@@ -16,7 +16,7 @@ export function NextPage({ to, label, description }: { to: string; label: string
           >
             <div className="pointer-events-none absolute -right-20 top-1/2 size-72 -translate-y-1/2 rounded-full bg-lynx-400/0 blur-3xl transition-colors duration-500 group-hover:bg-lynx-400/15" />
             <div className="relative">
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">Próxima página</span>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">Próxima página</span>
               <p className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                 <FlipText>{label}</FlipText>
               </p>

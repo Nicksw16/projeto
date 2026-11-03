@@ -99,7 +99,7 @@ export function WebsiteVisual() {
           <span className="size-2 rounded-full bg-[#ff5f57]" />
           <span className="size-2 rounded-full bg-[#febc2e]" />
           <span className="size-2 rounded-full bg-[#28c840]" />
-          <span className="ml-3 flex-1 truncate rounded-md bg-white/[0.05] px-2 py-0.5 text-[10px] text-neutral-500">
+          <span className="ml-3 flex-1 truncate rounded-md bg-white/[0.05] px-2 py-0.5 text-[10px] text-neutral-400">
             seunegocio.com.br
           </span>
         </div>

@@ -25,7 +25,7 @@ export function Stats() {
                   {stat.suffix && <span className="text-lynx-300">{stat.suffix}</span>}
                 </p>
                 <p className="mt-3 text-sm font-medium text-neutral-200 sm:text-base">{stat.label}</p>
-                <p className="mt-1 text-xs text-neutral-500 sm:text-sm">{stat.detail}</p>
+                <p className="mt-1 text-xs text-neutral-400 sm:text-sm">{stat.detail}</p>
               </div>
             ))}
           </div>

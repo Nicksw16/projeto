@@ -56,12 +56,12 @@ export function UsVsThem({
             <div className="flex h-full flex-col rounded-[28px] border border-white/[0.07] bg-ink-900/50">
               <div className="border-b border-white/[0.06] p-7">
                 <h3 className="text-lg font-semibold text-neutral-400">{them.title}</h3>
-                <p className="mt-2 text-sm text-neutral-500">{them.description}</p>
+                <p className="mt-2 text-sm text-neutral-400">{them.description}</p>
               </div>
               <ul className="flex flex-1 flex-col gap-3.5 p-7">
                 {them.points.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-[15px] text-neutral-500">
-                    <span className="mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-[5px] bg-white/[0.06] text-neutral-500">
+                  <li key={point} className="flex items-start gap-3 text-[15px] text-neutral-400">
+                    <span className="mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-[5px] bg-white/[0.06] text-neutral-400">
                       <X className="size-3" strokeWidth={3} />
                     </span>
                     {point}

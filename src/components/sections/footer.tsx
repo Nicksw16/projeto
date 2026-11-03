@@ -103,7 +103,7 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-white/[0.06]">
-        <div className="container-lynx flex flex-col items-center justify-between gap-4 py-6 text-xs text-neutral-500 sm:flex-row">
+        <div className="container-lynx flex flex-col items-center justify-between gap-4 py-6 text-xs text-neutral-400 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </p>

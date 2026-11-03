@@ -49,7 +49,7 @@ export default function ServicosPage() {
             <ConceptSite />
           </BrowserFrame>
         </ScrollReveal>
-        <p className="mt-5 text-center text-sm text-neutral-500">
+        <p className="mt-5 text-center text-sm text-neutral-400">
           Cada site nasce do zero com a identidade do seu negócio — não da nossa. Este é um projeto conceito, com o WhatsApp
           integrado.
         </p>

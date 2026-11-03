@@ -106,7 +106,7 @@ export function NicheDemo({
         <Reveal delay={0.15} className="relative">
           <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(420px,100vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-lynx-400/20 to-lynx-500/15 blur-[90px]" />
           <WhatsAppPhone key={niche.id} script={niche.script} />
-          <p className="mt-4 text-center text-xs text-neutral-500">Conversa simulada · exemplo de {niche.label.toLowerCase()}</p>
+          <p className="mt-4 text-center text-xs text-neutral-400">Conversa simulada · exemplo de {niche.label.toLowerCase()}</p>
         </Reveal>
       </div>
     </section>

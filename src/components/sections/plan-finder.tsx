@@ -119,7 +119,7 @@ export function PlanFinder() {
                   transition={{ duration: 0.3, ease: EASE }}
                   className="relative"
                 >
-                  <p className="text-sm text-neutral-500">
+                  <p className="text-sm text-neutral-400">
                     Pergunta {step + 1} de {questions.length}
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{questions[step].q}</h3>
@@ -132,7 +132,7 @@ export function PlanFinder() {
                         className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-left text-[15px] text-neutral-200 transition-all hover:border-lynx-400/40 hover:bg-lynx-400/[0.06] hover:text-white"
                       >
                         {c.label}
-                        <ArrowRight className="size-4 shrink-0 text-neutral-500 transition-all group-hover:translate-x-0.5 group-hover:text-lynx-300" />
+                        <ArrowRight className="size-4 shrink-0 text-neutral-400 transition-all group-hover:translate-x-0.5 group-hover:text-lynx-300" />
                       </button>
                     ))}
                   </div>
@@ -140,7 +140,7 @@ export function PlanFinder() {
                     <button
                       type="button"
                       onClick={() => setAnswers((prev) => prev.slice(0, -1))}
-                      className="mt-5 inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-white"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm text-neutral-400 transition-colors hover:text-white"
                     >
                       <ArrowLeft className="size-3.5" />
                       Voltar

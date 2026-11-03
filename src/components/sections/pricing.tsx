@@ -98,7 +98,7 @@ function PlanCard({ plan }: { plan: (typeof plans)[number] }) {
 
       <div className="relative mt-6 border-y border-white/[0.06] py-5">
         <span className="block whitespace-nowrap text-3xl font-semibold tracking-tight text-white">Sob consulta</span>
-        <span className="mt-1 block text-sm text-neutral-500">Proposta por escrito, feita para o seu negócio</span>
+        <span className="mt-1 block text-sm text-neutral-400">Proposta por escrito, feita para o seu negócio</span>
       </div>
 
       <ul className="relative mt-6 space-y-3">

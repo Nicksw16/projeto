@@ -88,7 +88,7 @@ export function TriggerRecipes() {
                 <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-lynx-400/0 blur-3xl transition-colors duration-500 group-hover:bg-lynx-400/10" />
 
                 <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">Quando</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">Quando</span>
                   <p className="mt-2 flex items-start gap-2.5 text-[15px] font-medium text-white">
                     <r.whenIcon className="mt-0.5 size-4 shrink-0 text-neutral-400" />
                     {r.when}

@@ -39,11 +39,11 @@ const sections: { title: string; body: React.ReactNode }[] = [
   },
   {
     title: "Por quanto tempo guardamos",
-    body: "Conversas sem contratação são apagadas em até 12 meses. Dados de clientes ficam enquanto durar o contrato e pelo prazo que a lei exigir depois dele.",
+    body: "Guardamos os dados só pelo tempo necessário para as finalidades acima e pelo prazo que a lei exigir. Conversas sem contratação podem ser apagadas a seu pedido.",
   },
   {
     title: "Seus direitos",
-    body: "Você pode pedir confirmação de que tratamos seus dados, acesso, correção, anonimização ou exclusão, portabilidade, informação sobre compartilhamento e revogar consentimento (LGPD, art. 18). Respondemos em até 15 dias. Se não ficar satisfeito, pode reclamar à ANPD (gov.br/anpd).",
+    body: "Você pode pedir confirmação de que tratamos seus dados, acesso, correção, anonimização ou exclusão, portabilidade, informação sobre compartilhamento e revogar consentimento (LGPD, art. 18). Respondemos o quanto antes, dentro do prazo previsto em lei. Se não ficar satisfeito, pode reclamar à ANPD (gov.br/anpd).",
   },
   {
     title: "Automações feitas para clientes",
@@ -79,7 +79,7 @@ export default function PrivacidadePage() {
               <p className="mt-2 leading-relaxed text-neutral-400">{s.body}</p>
             </div>
           ))}
-          <p className="text-sm text-neutral-500">Última atualização: 3 de novembro de 2026.</p>
+          <p className="text-sm text-neutral-400">Última atualização: 3 de novembro de 2026.</p>
         </div>
       </section>
     </>

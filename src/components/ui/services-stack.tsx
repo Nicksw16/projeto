@@ -373,7 +373,7 @@ function ServiceCard({ service: s }: { service: Service }) {
       </div>
       <div className="p-5 pt-7 lg:px-12 lg:py-10">
         <p className="text-lg leading-snug text-neutral-200">{s.text}</p>
-        <p className="mt-8 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-neutral-500">O que está incluído</p>
+        <p className="mt-8 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-neutral-400">O que está incluído</p>
         <ul className="mt-3 grid grid-cols-2 gap-1.5 text-[14px] leading-tight">
           {capabilities.map((c) => (
             <li
@@ -460,7 +460,7 @@ export function ServicesStack({ services, eyebrow }: { services: Service[]; eyeb
             style={{ transformOrigin: "top center", willChange: "transform, opacity" }}
           >
             <h2 className="mb-6 text-3xl font-semibold tracking-tight text-white lg:sr-only">
-              <span className="block text-base font-normal text-neutral-500">{eyebrow}</span>
+              <span className="block text-base font-normal text-neutral-400">{eyebrow}</span>
               {s.title}
             </h2>
             <ServiceCard service={s} />
@@ -474,7 +474,7 @@ export function ServicesStack({ services, eyebrow }: { services: Service[]; eyeb
           <div className="mx-auto hidden w-full max-w-7xl grid-cols-2 px-8 lg:grid">
             <div className="flex h-full flex-col">
               <div className="flex h-1/2 flex-col justify-end pb-4">
-                <p className="text-xl font-medium text-neutral-500">{eyebrow}</p>
+                <p className="text-xl font-medium text-neutral-400">{eyebrow}</p>
               </div>
               <div className="relative h-1/2">
                 {services.map((s, i) => (

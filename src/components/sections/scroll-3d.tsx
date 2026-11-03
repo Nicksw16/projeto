@@ -381,12 +381,12 @@ export function Scroll3D() {
                 <li
                   key={s.label}
                   data-state={i < step ? "done" : i === step ? "active" : "todo"}
-                  className="group relative flex items-center gap-3 py-1.5 text-[15px] text-neutral-500 transition-colors duration-300 data-[state=active]:text-white data-[state=done]:text-neutral-300"
+                  className="group relative flex items-center gap-3 py-1.5 text-[15px] text-neutral-400 transition-colors duration-300 data-[state=active]:text-white data-[state=done]:text-neutral-300"
                 >
                   <span className="flex size-[23px] shrink-0 items-center justify-center rounded-full border border-white/15 bg-ink-950 font-mono text-[10px] transition-colors duration-300 group-data-[state=active]:border-lynx-400 group-data-[state=active]:bg-lynx-400 group-data-[state=active]:text-ink-950 group-data-[state=done]:border-lynx-400/50 group-data-[state=done]:text-lynx-300">
                     {i + 1}
                   </span>
-                  <span className="w-11 shrink-0 font-mono text-xs text-neutral-500">{s.time}</span>
+                  <span className="w-11 shrink-0 font-mono text-xs text-neutral-400">{s.time}</span>
                   {s.label}
                 </li>
               ))}

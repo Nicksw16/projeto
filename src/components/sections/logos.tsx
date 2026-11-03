@@ -25,7 +25,7 @@ const tools = [
 export function Logos() {
   return (
     <section aria-label="Ferramentas e integrações" className="relative border-y border-white/[0.06] bg-ink-900/40 py-10">
-      <p className="container-lynx text-center text-sm text-neutral-500">
+      <p className="container-lynx text-center text-sm text-neutral-400">
         Conectamos seu WhatsApp e seu site às ferramentas que você <span className="text-neutral-300">já usa</span>
       </p>
       <div className="relative mt-8">

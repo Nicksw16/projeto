@@ -54,7 +54,6 @@ export function NotificationStack({ className }: { className?: string }) {
         type="button"
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
-        aria-label="Mensagens que chegaram fora do horário"
         className="relative block w-full rounded-[28px] border border-white/10 bg-ink-850/80 p-3 text-left shadow-[0_30px_80px_-30px_rgb(0_0_0/0.9)] backdrop-blur-xl"
       >
         <div className="flex items-center justify-between px-2 pb-3 pt-1">
@@ -112,7 +111,7 @@ export function NotificationStack({ className }: { className?: string }) {
                 <span className={cn("min-w-0 flex-1", !expanded && index > 0 && "invisible")}>
                   <span className="flex items-center justify-between gap-2">
                     <span className="text-[13px] font-semibold text-white">{item.name}</span>
-                    <span className="text-[11px] tabular-nums text-neutral-500">{item.time}</span>
+                    <span className="text-[11px] tabular-nums text-neutral-400">{item.time}</span>
                   </span>
                   <span className="mt-0.5 block truncate text-[13px] text-neutral-300">{item.text}</span>
                 </span>
@@ -148,7 +147,7 @@ export function NotificationStack({ className }: { className?: string }) {
           </AnimatePresence>
         </div>
       </button>
-      <p className="mt-3 text-center text-[11px] text-neutral-500">Simulação ilustrativa · passe o mouse ou toque para abrir</p>
+      <p className="mt-3 text-center text-[11px] text-neutral-400">Simulação ilustrativa · passe o mouse ou toque para abrir</p>
     </div>
   );
 }

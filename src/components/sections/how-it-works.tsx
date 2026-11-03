@@ -74,7 +74,7 @@ function StepCard({ index, className }: { index: number; className?: string }) {
           <dd className="text-neutral-200">{step.lynx}</dd>
         </div>
         <div className="flex gap-3 rounded-2xl bg-white/[0.03] p-3">
-          <dt className="mt-px shrink-0 text-xs font-semibold uppercase tracking-[0.12em] text-neutral-500">Você</dt>
+          <dt className="mt-px shrink-0 text-xs font-semibold uppercase tracking-[0.12em] text-neutral-400">Você</dt>
           <dd className="text-neutral-400">{step.you}</dd>
         </div>
       </dl>

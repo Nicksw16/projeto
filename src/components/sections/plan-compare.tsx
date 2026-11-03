@@ -54,7 +54,7 @@ function Value({ value, highlight }: { value: Cell; highlight: boolean }) {
       <span className="sr-only">Incluso</span>
     </span>
   ) : (
-    <span className="mx-auto flex size-6 items-center justify-center text-neutral-600">
+    <span className="mx-auto flex size-6 items-center justify-center text-neutral-500">
       <Minus className="size-4" />
       <span className="sr-only">Não incluso</span>
     </span>
@@ -86,7 +86,7 @@ export function PlanCompare() {
               </colgroup>
               <thead>
                 <tr className="border-b border-white/[0.07]">
-                  <th scope="col" className="p-3 text-xs font-medium text-neutral-500 sm:p-5 sm:text-sm">
+                  <th scope="col" className="p-3 text-xs font-medium text-neutral-400 sm:p-5 sm:text-sm">
                     Recurso
                   </th>
                   {plans.map((p) => (
@@ -102,7 +102,7 @@ export function PlanCompare() {
               {groups.map((g) => (
                 <tbody key={g.name}>
                   <tr>
-                    <th colSpan={4} scope="colgroup" className="bg-white/[0.02] px-3 pb-2 pt-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-500 sm:px-5">
+                    <th colSpan={4} scope="colgroup" className="bg-white/[0.02] px-3 pb-2 pt-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-400 sm:px-5">
                       {g.name}
                     </th>
                   </tr>

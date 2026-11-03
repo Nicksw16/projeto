@@ -52,14 +52,14 @@ export function FaqExplorer() {
       <div className="container-lynx max-w-3xl">
         <Reveal>
           <label className="group relative flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-ink-900 px-5 transition-colors focus-within:border-lynx-400/50 focus-within:shadow-[0_0_0_4px_rgb(229_167_69/0.08)]">
-            <Search className="size-5 shrink-0 text-neutral-500 group-focus-within:text-lynx-300" />
+            <Search className="size-5 shrink-0 text-neutral-400 group-focus-within:text-lynx-300" />
             <span className="sr-only">Buscar uma dúvida</span>
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Busque: preço, Google, número, prazo…"
-              className="h-full w-full bg-transparent text-base text-white outline-none placeholder:text-neutral-500 [&::-webkit-search-cancel-button]:hidden"
+              className="h-full w-full bg-transparent text-base text-white outline-none placeholder:text-neutral-400 [&::-webkit-search-cancel-button]:hidden"
             />
             {query && (
               <button
@@ -93,7 +93,7 @@ export function FaqExplorer() {
           </div>
         </Reveal>
 
-        <p className="mt-8 text-sm text-neutral-500" aria-live="polite">
+        <p className="mt-8 text-sm text-neutral-400" aria-live="polite">
           {results.length === 1 ? "1 pergunta" : `${results.length} perguntas`}
           {deferred && ` para “${deferred}”`}
         </p>

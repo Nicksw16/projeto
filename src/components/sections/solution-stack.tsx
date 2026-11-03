@@ -15,7 +15,7 @@ function ProcessVisual() {
             <Check className="size-3.5" strokeWidth={3} />
           </span>
           <span className="text-sm text-neutral-200">{step}</span>
-          <span className="ml-auto font-mono text-xs text-neutral-500">0{i + 1}</span>
+          <span className="ml-auto font-mono text-xs text-neutral-400">0{i + 1}</span>
         </div>
       ))}
     </div>
