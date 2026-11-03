@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "motion/react";
+import { m as motion, useReducedMotion } from "motion/react";
 import { Pin } from "lucide-react";
 
 import { LynxMark } from "@/components/logo";

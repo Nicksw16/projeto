@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { LazyMotion } from "motion/react";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 import { SiteLayout } from "@/components/layout/site-layout";
@@ -14,21 +15,26 @@ const NotFoundPage = lazy(() => import("@/pages/not-found"));
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<div className="min-h-screen" />}>
-        <Routes>
-          <Route element={<SiteLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="servicos" element={<ServicosPage />} />
-            <Route path="automacao" element={<AutomacaoPage />} />
-            <Route path="processo" element={<ProcessoPage />} />
-            <Route path="planos" element={<PlanosPage />} />
-            <Route path="faq" element={<FaqPage />} />
-            <Route path="privacidade" element={<PrivacidadePage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <LazyMotion
+      features={() => import("@/lib/motion-features").then((m) => m.default)}
+      strict
+    >
+      <BrowserRouter>
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Routes>
+            <Route element={<SiteLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="servicos" element={<ServicosPage />} />
+              <Route path="automacao" element={<AutomacaoPage />} />
+              <Route path="processo" element={<ProcessoPage />} />
+              <Route path="planos" element={<PlanosPage />} />
+              <Route path="faq" element={<FaqPage />} />
+              <Route path="privacidade" element={<PrivacidadePage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </LazyMotion>
   );
 }

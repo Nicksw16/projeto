@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m as motion } from "motion/react";
 import { ArrowRight, Check } from "lucide-react";
 
 import { ButtonLink } from "@/components/button";

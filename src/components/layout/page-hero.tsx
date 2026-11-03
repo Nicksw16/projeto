@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m as motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 

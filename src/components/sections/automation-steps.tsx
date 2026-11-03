@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, m as motion, useMotionValueEvent, useScroll } from "motion/react";
 import { BellRing, CalendarCheck, Check, FileSpreadsheet, MessageCircle, Sparkles, UserRound, Zap } from "lucide-react";
 
 import { SectionHeading } from "@/components/reveal";

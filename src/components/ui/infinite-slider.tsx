@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { animate, motion, useMotionValue } from "motion/react";
+import { animate, m as motion, useMotionValue } from "motion/react";
 import useMeasure from "react-use-measure";
 
 import { cn } from "@/lib/utils";

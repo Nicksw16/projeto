@@ -1,5 +1,5 @@
 import { Fragment, useRef } from "react";
-import { type MotionValue, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { type MotionValue, m as motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 import { cn } from "@/lib/utils";
 

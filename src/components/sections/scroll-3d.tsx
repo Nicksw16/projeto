@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { AnimatePresence, m as motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 import { LynxMark } from "@/components/logo";
 import { CHAT, CONFIRM, PICKED_SLOT, SLOTS, STEPS, SUMMARY } from "@/components/three/chat-script";

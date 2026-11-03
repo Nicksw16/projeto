@@ -1,5 +1,5 @@
 import { createContext, type HTMLAttributes, type PropsWithChildren, useContext, useRef } from "react";
-import { type MotionValue, motion, useScroll, useTransform } from "motion/react";
+import { type MotionValue, m as motion, useScroll, useTransform } from "motion/react";
 
 import { cn } from "@/lib/utils";
 

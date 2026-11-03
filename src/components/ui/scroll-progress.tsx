@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "motion/react";
+import { m as motion, useScroll, useSpring } from "motion/react";
 
 // Base: Scroll Progress (21st.dev). Linha limão fina no topo mostrando quanto falta da página.
 export function ScrollProgress() {

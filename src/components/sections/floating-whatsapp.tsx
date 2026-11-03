@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m as motion } from "motion/react";
 import { MessageCircleQuestionMark, Monitor, MessageCircle, X } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/icons";

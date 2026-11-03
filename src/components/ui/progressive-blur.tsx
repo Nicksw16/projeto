@@ -1,4 +1,4 @@
-import { type HTMLMotionProps, motion } from "motion/react";
+import { type HTMLMotionProps, m as motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 

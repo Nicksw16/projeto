@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m as motion, useReducedMotion } from "motion/react";
 import { ArrowLeft, CalendarCheck, Camera, Mic, MoreVertical, Paperclip, Phone, ShoppingBag, Smile, Store, Video } from "lucide-react";
 
 import { cn } from "@/lib/utils";

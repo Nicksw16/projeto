@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m as motion } from "motion/react";
 import { ArrowRight, Calculator, Info } from "lucide-react";
 
 import { ButtonLink } from "@/components/button";

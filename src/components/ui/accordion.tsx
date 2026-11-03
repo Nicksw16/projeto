@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { m as motion, useReducedMotion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,5 +1,5 @@
 import { useDeferredValue, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m as motion } from "motion/react";
 import { ArrowRight, Search, X } from "lucide-react";
 
 import { ButtonLink } from "@/components/button";

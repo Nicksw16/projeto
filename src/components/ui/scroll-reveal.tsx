@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { m as motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
